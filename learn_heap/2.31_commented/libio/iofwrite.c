@@ -36,6 +36,7 @@ _IO_fwrite (const void *buf, size_t size, size_t count, FILE *fp)
     return 0;
   _IO_acquire_lock (fp);
   if (_IO_vtable_offset (fp) != 0 || _IO_fwide (fp, -1) == -1)
+    // 实际调用libio/fileops.c:_IO_new_file_xsputn()
     written = _IO_sputn (fp, (const char *) buf, request);
   _IO_release_lock (fp);
   /* We have written all of the input in case the return value indicates

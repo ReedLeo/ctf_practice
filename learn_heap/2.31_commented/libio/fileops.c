@@ -1225,7 +1225,7 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
 	  for (p = s + n; p > s; )
 	    {
 	      if (*--p == '\n')
-		{
+		{  // 遇到'\n'则在行缓存模式(_IO_LINE_BUF)下，需要刷新写缓存。
 		  count = p - s + 1;
 		  must_flush = 1;
 		  break;
@@ -1241,10 +1241,12 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
     {
       if (count > to_do)
 	count = to_do;
+        // 先尝试填满写缓存。（要么填满有剩余或恰好填满，要么填完还没满）
       f->_IO_write_ptr = __mempcpy (f->_IO_write_ptr, s, count);
       s += count;
       to_do -= count;
     }
+    // 至此，写缓存已满 或 行缓存模式遇见'\n' 均需要刷新缓冲区
   if (to_do + must_flush > 0)
     {
       size_t block_size, do_write;
