@@ -377,21 +377,21 @@ _IO_default_xsputn (FILE *f, const void *data, size_t n)
   size_t more = n;
   if (more <= 0)
     return 0;
-  for (;;)
+  for (;;)	// 循环写完所有数据
     {
       /* Space available. */
       if (f->_IO_write_ptr < f->_IO_write_end)
-	{
+	{ // 写缓存有空闲，计算大小
 	  size_t count = f->_IO_write_end - f->_IO_write_ptr;
 	  if (count > more)
 	    count = more;
 	  if (count > 20)
-	    {
+	    {	// 大于20个字节，直接memcpy到写缓存
 	      f->_IO_write_ptr = __mempcpy (f->_IO_write_ptr, s, count);
 	      s += count;
 	    }
 	  else if (count)
-	    {
+	    { // <= 20字节，for-loop逐个字节拷贝到写缓存
 	      char *p = f->_IO_write_ptr;
 	      ssize_t i;
 	      for (i = count; --i >= 0; )
@@ -400,6 +400,7 @@ _IO_default_xsputn (FILE *f, const void *data, size_t n)
 	    }
 	  more -= count;
 	}
+	// 写完了 或 写满缓冲区，用_IO_new_file_overfolw刷新之
       if (more == 0 || _IO_OVERFLOW (f, (unsigned char) *s++) == EOF)
 	break;
       more--;

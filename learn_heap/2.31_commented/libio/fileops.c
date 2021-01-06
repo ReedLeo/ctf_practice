@@ -450,7 +450,7 @@ new_do_write (FILE *fp, const char *data, size_t to_do)
 	return 0;
       fp->_offset = new_pos;
     }
-  count = _IO_SYSWRITE (fp, data, to_do);
+  count = _IO_SYSWRITE (fp, data, to_do);       // 调用write系统调用
   if (fp->_cur_column && count)
     fp->_cur_column = _IO_adjust_column (fp->_cur_column - 1, data, count) + 1;
   _IO_setg (fp, fp->_IO_buf_base, fp->_IO_buf_base, fp->_IO_buf_base);
@@ -739,7 +739,7 @@ int
 _IO_new_file_overflow (FILE *f, int ch)
 {
   if (f->_flags & _IO_NO_WRITES) /* SET ERROR */
-    {
+    {  // 若禁止写者存在，则说明出错
       f->_flags |= _IO_ERR_SEEN;
       __set_errno (EBADF);
       return EOF;
@@ -749,8 +749,9 @@ _IO_new_file_overflow (FILE *f, int ch)
     {
       /* Allocate a buffer if needed. */
       if (f->_IO_write_base == NULL)
-	{
+	{ // 给新的FILE对象分配IO缓存
 	  _IO_doallocbuf (f);
+          // _IO_read_base = _IO_read_ptr = _IO_read_end = _IO_buf_base;
 	  _IO_setg (f, f->_IO_buf_base, f->_IO_buf_base, f->_IO_buf_base);
 	}
       /* Otherwise must be currently reading.
@@ -781,6 +782,7 @@ _IO_new_file_overflow (FILE *f, int ch)
 	f->_IO_write_end = f->_IO_write_ptr;
     }
   if (ch == EOF)
+  // 新创建的FILE对象_IO_write_ptr == _IO_write_base， 故相当于_IO_do_write(f, f->_IO_write_base, 0)
     return _IO_do_write (f, f->_IO_write_base,
 			 f->_IO_write_ptr - f->_IO_write_base);
   if (f->_IO_write_ptr == f->_IO_buf_end ) /* Buffer is really full */
@@ -1237,7 +1239,7 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
     count = f->_IO_write_end - f->_IO_write_ptr; /* Space available. */
 
   /* Then fill the buffer. */
-  if (count > 0)
+  if (count > 0)        // 未分配IO缓冲区时，count==0，因为_IO_write_end == _IO_write_ptr == 0
     {
       if (count > to_do)
 	count = to_do;
@@ -1246,24 +1248,26 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
       s += count;
       to_do -= count;
     }
-    // 至此，写缓存已满 或 行缓存模式遇见'\n' 均需要刷新缓冲区
+    // 至此，写缓存未分配 或 写缓存已满 或 行缓存模式遇见'\n' 均需要刷新缓冲区
   if (to_do + must_flush > 0)
     {
       size_t block_size, do_write;
       /* Next flush the (full) buffer. */
+      // 调用libio/fileops.c:_IO_new_file_overflow(f, EOF)， 负责IO缓存初始化
       if (_IO_OVERFLOW (f, EOF) == EOF)
 	/* If nothing else has to be written we must not signal the
 	   caller that everything has been written.  */
 	return to_do == 0 ? EOF : n - to_do;
 
       /* Try to maintain alignment: write a whole number of blocks.  */
-      block_size = f->_IO_buf_end - f->_IO_buf_base;
-      do_write = to_do - (block_size >= 128 ? to_do % block_size : 0);
+      block_size = f->_IO_buf_end - f->_IO_buf_base;    // IO缓冲区大小
+      do_write = to_do - (block_size >= 128 ? to_do % block_size : 0);  // 向下按块大小对齐，一次写入若干个块
 
       if (do_write)
 	{
 	  count = new_do_write (f, s, do_write);
 	  to_do -= count;
+          // 正常应该count == do_write
 	  if (count < do_write)
 	    return n - to_do;
 	}
@@ -1271,7 +1275,7 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
       /* Now write out the remainder.  Normally, this will fit in the
 	 buffer, but it's somewhat messier for line-buffered files,
 	 so we let _IO_default_xsputn handle the general case. */
-      if (to_do)
+      if (to_do) // 剩余不足一块的数据，调用/libio/genops.c:_IO_default_xsputn输出
 	to_do -= _IO_default_xsputn (f, s+do_write, to_do);
     }
   return n - to_do;
