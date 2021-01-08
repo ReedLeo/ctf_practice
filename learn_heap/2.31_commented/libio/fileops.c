@@ -1219,10 +1219,10 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
 
   /* First figure out how much space is available in the buffer. */
   if ((f->_flags & _IO_LINE_BUF) && (f->_flags & _IO_CURRENTLY_PUTTING))
-    {
+    { // 统计缓冲区剩余空间
       count = f->_IO_buf_end - f->_IO_write_ptr;
       if (count >= n)
-	{
+	{ // 剩余缓冲区够大
 	  const char *p;
 	  for (p = s + n; p > s; )
 	    {
@@ -1248,7 +1248,7 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
       s += count;
       to_do -= count;
     }
-    // 至此，写缓存未分配 或 写缓存已满 或 行缓存模式遇见'\n' 均需要刷新缓冲区
+    // 至此，写缓存未分配 或 写缓存已满 或 行缓存模式遇见'\n' 均需要（分配）刷新缓冲区
   if (to_do + must_flush > 0)
     {
       size_t block_size, do_write;
@@ -1260,6 +1260,7 @@ _IO_new_file_xsputn (FILE *f, const void *data, size_t n)
 	return to_do == 0 ? EOF : n - to_do;
 
       /* Try to maintain alignment: write a whole number of blocks.  */
+      // 至此，IO缓冲区已刷新（确保已分配）
       block_size = f->_IO_buf_end - f->_IO_buf_base;    // IO缓冲区大小
       do_write = to_do - (block_size >= 128 ? to_do % block_size : 0);  // 向下按块大小对齐，一次写入若干个块
 
