@@ -1183,8 +1183,9 @@ ssize_t
 _IO_new_file_write (FILE *f, const void *data, ssize_t n)
 {
   ssize_t to_do = n;
+  // 循环写，写完为止
   while (to_do > 0)
-    {
+    { // 系统调用write
       ssize_t count = (__builtin_expect (f->_flags2
                                          & _IO_FLAGS2_NOTCANCEL, 0)
 			   ? __write_nocancel (f->_fileno, data, to_do)

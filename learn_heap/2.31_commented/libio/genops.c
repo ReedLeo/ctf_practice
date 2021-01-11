@@ -400,7 +400,7 @@ _IO_default_xsputn (FILE *f, const void *data, size_t n)
 	    }
 	  more -= count;
 	}
-	// 写完了 或 写满缓冲区，用_IO_new_file_overfolw刷新之
+	// 写完了 或 写满缓冲区，用fileops.c:_IO_new_file_overfolw刷新之
       if (more == 0 || _IO_OVERFLOW (f, (unsigned char) *s++) == EOF)
 	break;
       more--;
