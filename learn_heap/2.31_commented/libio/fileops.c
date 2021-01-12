@@ -281,7 +281,7 @@ _IO_new_file_fopen (FILE *fp, const char *filename, const char *mode,
 	}
       break;
     }
-  // 系统调用open来打开文件
+  // fileops.c:_IO_file_open
   result = _IO_file_open (fp, filename, omode|oflags, oprot, read_write,
 			  is32not64);
 
@@ -1309,7 +1309,7 @@ _IO_file_xsgetn (FILE *fp, void *data, size_t n)
     { // 当前 读缓存 中已有的字符
       have = fp->_IO_read_end - fp->_IO_read_ptr;
       if (want <= have)
-	{  // 缓存中已有字符满足所需，直接复制
+	{  // 缓存中已有字符满足所需，直接从缓冲区取出。
 	  memcpy (s, fp->_IO_read_ptr, want);
 	  fp->_IO_read_ptr += want;
 	  want = 0;
@@ -1317,7 +1317,7 @@ _IO_file_xsgetn (FILE *fp, void *data, size_t n)
       else
 	{
 	  if (have > 0)
-	    { // 缓存中有字符 但不够， 先拷贝这部分到缓冲区先
+	    { // 缓存中有字符 但不够， 先从缓冲区中取出。
 	      s = __mempcpy (s, fp->_IO_read_ptr, have);
 	      want -= have;
 	      fp->_IO_read_ptr += have;
@@ -1335,7 +1335,7 @@ _IO_file_xsgetn (FILE *fp, void *data, size_t n)
 	     the user buffer. */
 	  if (fp->_IO_buf_base
 	      && want < (size_t) (fp->_IO_buf_end - fp->_IO_buf_base))
-	    { // 当前缓存存在，且所需字符小于缓存大小，调用__underflow()读取
+	    { // 当前缓存存在，且所需字符小于缓存大小，调用libio/genops.c:__underflow()读取
 	      if (__underflow (fp) == EOF)
 		break;
 

@@ -35,6 +35,7 @@ _IO_fread (void *buf, size_t size, size_t count, FILE *fp)
   if (bytes_requested == 0)
     return 0;
   _IO_acquire_lock (fp);
+  // libio/genops.c:_IO_xsgetn(...)
   bytes_read = _IO_sgetn (fp, (char *) buf, bytes_requested);
   _IO_release_lock (fp);
   return bytes_requested == bytes_read ? count : bytes_read / size;

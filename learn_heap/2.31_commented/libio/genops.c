@@ -413,6 +413,7 @@ size_t
 _IO_sgetn (FILE *fp, void *data, size_t n)
 {
   /* FIXME handle putback buffer here! */
+  // 通过_vtable调用libio/fileops.c:_IO_file_xsgetn(...)
   return _IO_XSGETN (fp, data, n);
 }
 libc_hidden_def (_IO_sgetn)
