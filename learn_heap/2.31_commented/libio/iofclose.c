@@ -46,10 +46,12 @@ _IO_new_fclose (FILE *fp)
 
   /* First unlink the stream.  */
   if (fp->_flags & _IO_IS_FILEBUF)
+    // 从_IO_list_all中移除当前fp对象
     _IO_un_link ((struct _IO_FILE_plus *) fp);
 
   _IO_acquire_lock (fp);
   if (fp->_flags & _IO_IS_FILEBUF)
+    // fileops.c:_IO_new_file_close_it执行未写完操作，关闭文件描述符
     status = _IO_file_close_it (fp);
   else
     status = fp->_flags & _IO_ERR_SEEN ? -1 : 0;

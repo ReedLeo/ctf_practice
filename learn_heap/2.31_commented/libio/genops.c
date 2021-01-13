@@ -54,7 +54,7 @@ _IO_un_link (struct _IO_FILE_plus *fp)
   if (fp->file._flags & _IO_LINKED)
     {
       FILE **f;
-#ifdef _IO_MTSAFE_IO
+#ifdef _IO_MTSAFE_IO //MT(Multi-Threads)，多线程并发时串行化，保证安全释放
       _IO_cleanup_region_start_noarg (flush_cleanup);
       _IO_lock_lock (list_all_lock);
       run_fp = (FILE *) fp;
@@ -63,8 +63,10 @@ _IO_un_link (struct _IO_FILE_plus *fp)
       if (_IO_list_all == NULL)
 	;
       else if (fp == _IO_list_all)
+        // 当前待释放的fp位于_IO_list_all链表头部
 	_IO_list_all = (struct _IO_FILE_plus *) _IO_list_all->file._chain;
       else
+        // 当前带释放的fp位于_IO_list_all链表中间
 	for (f = &_IO_list_all->file._chain; *f; f = &(*f)->_chain)
 	  if (*f == (FILE *) fp)
 	    {
@@ -607,7 +609,7 @@ _IO_default_finish (FILE *fp, int dummy)
 {
   struct _IO_marker *mark;
   if (fp->_IO_buf_base && !(fp->_flags & _IO_USER_BUF))
-    {
+    { // 释放IO缓冲区
       free (fp->_IO_buf_base);
       fp->_IO_buf_base = fp->_IO_buf_end = NULL;
     }
@@ -620,7 +622,7 @@ _IO_default_finish (FILE *fp, int dummy)
       free (fp->_IO_save_base);
       fp->_IO_save_base = NULL;
     }
-
+  // 从_IO_list_all链表摘除当前节点
   _IO_un_link ((struct _IO_FILE_plus *) fp);
 
 #ifdef _IO_MTSAFE_IO

@@ -128,9 +128,11 @@ int
 _IO_new_file_close_it (FILE *fp)
 {
   int write_status;
+  // 用_fileno != -1来判断是否打开了文件
   if (!_IO_file_is_open (fp))
     return EOF;
 
+  // 允许写 且 当前处于输出状态 则在关闭前要用_IO_do_flush完成写操作
   if ((fp->_flags & _IO_NO_WRITES) == 0
       && (fp->_flags & _IO_CURRENTLY_PUTTING) != 0)
     write_status = _IO_do_flush (fp);
@@ -139,6 +141,7 @@ _IO_new_file_close_it (FILE *fp)
 
   _IO_unsave_markers (fp);
 
+  // 已经没有待写内容， 调用close关闭文件描述符
   int close_status = ((fp->_flags2 & _IO_FLAGS2_NOCLOSE) == 0
 		      ? _IO_SYSCLOSE (fp) : 0);
 
@@ -151,10 +154,15 @@ _IO_new_file_close_it (FILE *fp)
       _IO_wsetg (fp, NULL, NULL, NULL);
       _IO_wsetp (fp, NULL, NULL);
     }
+  // genops.c:_IO_setb, 释放IO缓冲区，置_IO_buf_base, _IO_buf_end为NULL
   _IO_setb (fp, NULL, NULL, 0);
+  // libioP.h:_IO_setg, 置_IO_read_ptr, _IO_read_base, _IO_read_end 为NULL
   _IO_setg (fp, NULL, NULL, NULL);
+  // libioP.h:_IO_setp, 置_IO_write_base, _IO_write_ptr, _IO_write_end 为NULL
   _IO_setp (fp, NULL, NULL);
 
+  // 不一定从flcose进入当前函数，故之前可能没有unlink。
+  // 由于_IO_LINKED标志位会被清除故不会重复unlink.
   _IO_un_link ((struct _IO_FILE_plus *) fp);
   fp->_flags = _IO_MAGIC|CLOSED_FILEBUF_FLAGS;
   fp->_fileno = -1;
@@ -167,10 +175,12 @@ libc_hidden_ver (_IO_new_file_close_it, _IO_file_close_it)
 void
 _IO_new_file_finish (FILE *fp, int dummy)
 {
+  // 若文件为打开状态, _fileno != -1
   if (_IO_file_is_open (fp))
     {
-      _IO_do_flush (fp);
+      _IO_do_flush (fp);  // 若缓存有待写数据，调用write写完剩余数据。
       if (!(fp->_flags & _IO_DELETE_DONT_CLOSE))
+        // close文件描述符
 	_IO_SYSCLOSE (fp);
     }
   _IO_default_finish (fp, 0);
