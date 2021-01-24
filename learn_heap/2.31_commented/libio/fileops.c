@@ -445,6 +445,8 @@ static size_t
 new_do_write (FILE *fp, const char *data, size_t to_do)
 {
   size_t count;
+  // 利用stdout任意写时，通常都设置_IO_IS_APPENDING(0x1000). 避免进入else-if分支而不可控。
+  // 一切从简，less is more.
   if (fp->_flags & _IO_IS_APPENDING)
     /* On a system without a proper O_APPEND implementation,
        you would need to sys_seek(0, SEEK_END) here, but is

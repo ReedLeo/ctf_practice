@@ -37,8 +37,8 @@ _IO_puts (const char *str)
 
   if ((_IO_vtable_offset (stdout) != 0
        || _IO_fwide (stdout, -1) == -1)
-      && _IO_sputn (stdout, str, len) == len
-      && _IO_putc_unlocked ('\n', stdout) != EOF)
+      && _IO_sputn (stdout, str, len) == len       // 先输出str内容
+      && _IO_putc_unlocked ('\n', stdout) != EOF)  // 输出最后一个'\n'
     result = MIN (INT_MAX, len + 1);
 
   _IO_release_lock (stdout);
