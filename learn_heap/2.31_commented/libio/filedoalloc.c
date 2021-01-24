@@ -91,6 +91,7 @@ _IO_file_doallocate (FILE *fp)
 	      DEV_TTY_P (&st) ||
 #endif
 	      local_isatty (fp->_fileno))
+            // TTY设备转换为行缓存(_IO_LINE_BUF)模式
 	    fp->_flags |= _IO_LINE_BUF;
 	}
 #if defined _STATBUF_ST_BLKSIZE
@@ -98,6 +99,7 @@ _IO_file_doallocate (FILE *fp)
 	size = st.st_blksize;   // amd64 linux 下一般会更新为st_blksize（0x1000）
 #endif
     }
+    // 堆上分配IO缓存
   p = malloc (size);
   if (__glibc_unlikely (p == NULL))
     return EOF;
