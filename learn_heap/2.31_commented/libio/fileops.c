@@ -46,7 +46,9 @@
 
 extern struct __gconv_trans_data __libio_translit attribute_hidden;
 
-/* An fstream can be in at most one of put mode, get mode, or putback mode.
+/* 这里对整个file IO 进行了简要说明，其中gptr()等函数是C++ std::basic_streambuf中的
+   系列成员函数。可以看出，包括_vtable内的各个函数，都是为了与C++ 的iostream做适配。
+   An fstream can be in at most one of put mode, get mode, or putback mode.
    Putback mode is a variant of get mode.
 
    In a filebuf, there is only one current position, instead of two
