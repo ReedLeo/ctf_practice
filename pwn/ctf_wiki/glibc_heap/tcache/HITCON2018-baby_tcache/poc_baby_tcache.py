@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# This poc is base on ubuntu18.04, so all constant values are
+# relative to ubuntu18.04's ld-2.27.so and libc-2.27.so.
+# It may failed, if you run this poc on any OS， which libc's version is different,
+# even through you've patched elf with ld-2.27.so and libc-2.27, or refers to 
+# right *.so via LD_PRELOAD.
 from pwn import *
 context(os="linux", arch="amd64")
 
