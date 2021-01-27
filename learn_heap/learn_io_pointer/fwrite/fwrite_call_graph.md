@@ -2,6 +2,7 @@
 digraph fwrite_call_graph {
     rankdir=TD;
     size="8,5"
+    node[shape="box"]
 
     fwrite -> _IO_xputn;
         _IO_xputn -> memcpy;

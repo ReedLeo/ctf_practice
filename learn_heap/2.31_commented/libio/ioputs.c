@@ -37,6 +37,7 @@ _IO_puts (const char *str)
 
   if ((_IO_vtable_offset (stdout) != 0
        || _IO_fwide (stdout, -1) == -1)
+       // 调用fileops.c:_IO_new_file_xsputn
       && _IO_sputn (stdout, str, len) == len       // 先输出str内容
       && _IO_putc_unlocked ('\n', stdout) != EOF)  // 输出最后一个'\n'
     result = MIN (INT_MAX, len + 1);
