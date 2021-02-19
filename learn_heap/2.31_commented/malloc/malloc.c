@@ -3431,7 +3431,7 @@ __libc_calloc (size_t n, size_t elem_size)
           av == arena_for_chunk (mem2chunk (mem)));
 
   if (!SINGLE_THREAD_P)
-    {
+    {  // 如果多线程型情况下，前面_int_malloc申请失败（mem==0），则再尝试一次。
       if (mem == 0 && av != NULL)
 	{
 	  LIBC_PROBE (memory_calloc_retry, 1, sz);
@@ -3475,7 +3475,7 @@ __libc_calloc (size_t n, size_t elem_size)
   clearsize = csz - SIZE_SZ;
   nclears = clearsize / sizeof (INTERNAL_SIZE_T);
   assert (nclears >= 3);
-
+  // 大于9*sizeof(size_t) == 36bytes（72 bytes 64位）时，直接memset
   if (nclears > 9)
     return memset (d, 0, clearsize);
 
