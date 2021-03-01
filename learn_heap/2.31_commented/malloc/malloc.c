@@ -3636,10 +3636,11 @@ _int_malloc (mstate av, size_t bytes)
     {
       idx = smallbin_index (nb);
       bin = bin_at (av, idx);
-
+      // 若 smallbin 非空
       if ((victim = last (bin)) != bin)
         {
           bck = victim->bk;
+          // 在有tcache的情况下，只检测一次chunk的合法性。
 	  if (__glibc_unlikely (bck->fd != victim))
 	    malloc_printerr ("malloc(): smallbin double linked list corrupted");
           set_inuse_bit_at_offset (victim, nb);
@@ -3652,12 +3653,14 @@ _int_malloc (mstate av, size_t bytes)
 #if USE_TCACHE
 	  /* While we're here, if we see other chunks of the same size,
 	     stash them in the tcache.  */
+             // 返回结果前，将当前smallbin中chunk填满对应tcache.
 	  size_t tc_idx = csize2tidx (nb);
 	  if (tcache && tc_idx < mp_.tcache_bins)
 	    {
 	      mchunkptr tc_victim;
 
 	      /* While bin not empty and tcache not full, copy chunks over.  */
+              // tcache未满 且 smallbin 非空
 	      while (tcache->counts[tc_idx] < mp_.tcache_count
 		     && (tc_victim = last (bin)) != bin)
 		{
@@ -3667,7 +3670,9 @@ _int_malloc (mstate av, size_t bytes)
 		      set_inuse_bit_at_offset (tc_victim, nb);
 		      if (av != &main_arena)
 			set_non_main_arena (tc_victim);
+                      // 未验证bck的合法性，导致tcache stashing unlink attack
 		      bin->bk = bck;
+                      // 令bck=(target_ptr-0x10)，即可将bin写入*target_ptr.
 		      bck->fd = bin;
 
 		      tcache_put (tc_victim, tc_idx);
@@ -3721,7 +3726,8 @@ _int_malloc (mstate av, size_t bytes)
 
   tcache_unsorted_count = 0;
 #endif
-
+  // fastbin, smallbin中没有合适的chunk，进入大循环。该循环会在unsorted bin中查找
+  // 合适的chunk，并将已查找过的chunk放入对应的smallbin/largebin中。
   for (;; )
     {
       int iters = 0;
@@ -3753,12 +3759,13 @@ _int_malloc (mstate av, size_t bytes)
              no exact fit for a small chunk.
            */
 
-          if (in_smallbin_range (nb) &&
-              bck == unsorted_chunks (av) &&
-              victim == av->last_remainder &&
-              (unsigned long) (size) > (unsigned long) (nb + MINSIZE))
+          if (in_smallbin_range (nb) && // 申请大小属于smallbin范围
+              bck == unsorted_chunks (av) &&    // 当前unsortedbin只有一个chunk
+              victim == av->last_remainder &&   // 当前chunk是lats_remainder
+              (unsigned long) (size) > (unsigned long) (nb + MINSIZE))  // 申请大小小于当前unsortedbin大小，并且分割该ub后，剩余部分还大于MINSIZE(可以作为有效chunk)
             {
               /* split and reattach remainder */
+              // 从last_remainder中切割一块nb大小的chunk
               remainder_size = size - nb;
               remainder = chunk_at_offset (victim, nb);
               unsorted_chunks (av)->bk = unsorted_chunks (av)->fd = remainder;
@@ -3782,13 +3789,16 @@ _int_malloc (mstate av, size_t bytes)
             }
 
           /* remove from unsorted list */
+          // 从unsorted bin 中卸下当前遍历到的chunk
+          // glibc-2.29开始，增加了下面的if语句，检查bkc->fd的合法性，导致unsorted bin attack失效。
           if (__glibc_unlikely (bck->fd != victim))
             malloc_printerr ("malloc(): corrupted unsorted chunks 3");
           unsorted_chunks (av)->bk = bck;
           bck->fd = unsorted_chunks (av);
 
           /* Take now instead of binning if exact fit */
-
+          // 若取下的unsoted bin大小恰好契合，则不放入对应smallbin/largebin中。
+          // 若有tcache，则先将对应大小的tcache填满，再用tcache_get()获取返回结果。
           if (size == nb)
             {
               set_inuse_bit_at_offset (victim, size);
@@ -3797,6 +3807,7 @@ _int_malloc (mstate av, size_t bytes)
 #if USE_TCACHE
 	      /* Fill cache first, return to user only if cache fills.
 		 We may return one of these chunks later.  */
+                // 与前面处理fastbin/smallbin不同，这里先填满tcache，在tcache_get()获取返回结果。
 	      if (tcache_nb
 		  && tcache->counts[tc_idx] < mp_.tcache_count)
 		{
@@ -3817,7 +3828,7 @@ _int_malloc (mstate av, size_t bytes)
             }
 
           /* place chunk in bin */
-
+          // 当前遍历到的chunk不满足要求，就放入对应small/large bin中
           if (in_smallbin_range (size))
             {
               victim_index = smallbin_index (size);
@@ -3889,7 +3900,7 @@ _int_malloc (mstate av, size_t bytes)
 	 filling the cache, return one of the cached ones.  */
       ++tcache_unsorted_count;
       if (return_cached
-	  && mp_.tcache_unsorted_limit > 0
+	  && mp_.tcache_unsorted_limit > 0  // 默认情况下, mp_tcache_unsorted_limit==0, 不会执行该if分支
 	  && tcache_unsorted_count > mp_.tcache_unsorted_limit)
 	{
 	  return tcache_get (tc_idx);
