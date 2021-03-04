@@ -1,7 +1,7 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.04
 
-RUN  sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
-RUN  sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
+RUN  sed -i s@/archive.ubuntu.com/@/mirrors.ustc.edu.cn\/ubuntu-old-releases/@g /etc/apt/sources.list
+RUN  sed -i s@/security.ubuntu.com/@/mirrors.ustc.edu.cn\/ubuntu-old-releases/@g /etc/apt/sources.list
 RUN  apt-get clean
 RUN apt-get update
 
