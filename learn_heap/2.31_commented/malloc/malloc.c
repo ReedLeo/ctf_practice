@@ -3836,25 +3836,28 @@ _int_malloc (mstate av, size_t bytes)
               fwd = bck->fd;
             }
           else
-            {
+            { // 处理large bin的情况
               victim_index = largebin_index (size);
               bck = bin_at (av, victim_index);
               fwd = bck->fd;
 
               /* maintain large bins in sorted order */
-              if (fwd != bck)
+              // large bin是按chunk_size升序(bk方向)排列的双向链表构成的优先队列。
+              if (fwd != bck)   // large bin非空
                 {
                   /* Or with inuse bit to speed comparisons */
                   size |= PREV_INUSE;
                   /* if smaller than smallest, bypass loop below */
                   assert (chunk_main_arena (bck->bk));
+                  // 待插入chunk大小比当前large bin中最小的还小
                   if ((unsigned long) (size)
 		      < (unsigned long) chunksize_nomask (bck->bk))
                     {
+                      // 调整插入位置到队首，即当前插入的是最小chunk。
                       fwd = bck;
                       bck = bck->bk;
 
-                      victim->fd_nextsize = fwd->fd;
+                      victim->fd_nextsize = fwd->fd;    // fwd是bin，fd是为了跳过bin
                       victim->bk_nextsize = fwd->fd->bk_nextsize;
                       fwd->fd->bk_nextsize = victim->bk_nextsize->fd_nextsize = victim;
                     }
