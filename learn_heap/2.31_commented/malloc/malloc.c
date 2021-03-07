@@ -3842,7 +3842,7 @@ _int_malloc (mstate av, size_t bytes)
               fwd = bck->fd;
 
               /* maintain large bins in sorted order */
-              // large bin是按chunk_size升序(bk方向)排列的双向链表构成的优先队列。
+              // large bin是按chunk_size降序(fd方向)排列的双向链表构成的优先队列。
               if (fwd != bck)   // large bin非空
                 {
                   /* Or with inuse bit to speed comparisons */
@@ -3854,28 +3854,38 @@ _int_malloc (mstate av, size_t bytes)
 		      < (unsigned long) chunksize_nomask (bck->bk))
                     {
                       // 调整插入位置到队首，即当前插入的是最小chunk。
-                      fwd = bck;
-                      bck = bck->bk;
+                      fwd = bck;        // fwd = bin
+                      bck = bck->bk;    // back = bin->bk; the smallest chunk in current list.
 
                       victim->fd_nextsize = fwd->fd;    // fwd是bin，fd是为了跳过bin
-                      victim->bk_nextsize = fwd->fd->bk_nextsize;
+                      /*
+                      * 这里不用bck的原因：bck->bk_nextsize可能无意义，因为与其同大小的chunk可能有多个。
+                      * 而bck不是第一个入队的，故bck没有维护两个*_nextsize指针。
+                      * 于此相反的是，fd方向上的fwd总是它这个大小chunk中第一个入队的，必然维护了
+                      * *_nextsize指针。
+                      */
+                      victim->bk_nextsize = fwd->fd->bk_nextsize; 
                       fwd->fd->bk_nextsize = victim->bk_nextsize->fd_nextsize = victim;
                     }
                   else
-                    {
+                    {   // 插在large队列中间
                       assert (chunk_main_arena (fwd));
+                      // 按chunk大小降序查找待插入位置：即找到第队列中第一个>=victim的chunk。
                       while ((unsigned long) size < chunksize_nomask (fwd))
                         {
                           fwd = fwd->fd_nextsize;
 			  assert (chunk_main_arena (fwd));
                         }
-
+                      /*
+                       * 找到同样大小的largebin后，总是插入到第二个位置。因为这样可以避免维护
+                       * victim的*_nextsize指针，令原有chunk维护即可。
+                       */
                       if ((unsigned long) size
 			  == (unsigned long) chunksize_nomask (fwd))
                         /* Always insert in the second position.  */
                         fwd = fwd->fd;
                       else
-                        {
+                        { // 后续chunk均比victim大
                           victim->fd_nextsize = fwd;
                           victim->bk_nextsize = fwd->bk_nextsize;
                           if (__glibc_unlikely (fwd->bk_nextsize->fd_nextsize != fwd))
