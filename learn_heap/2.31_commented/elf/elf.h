@@ -84,19 +84,33 @@ typedef struct
 
 typedef struct
 {
+  // 前四字节"\x7fELF" 后续是OS, ABI版本信息以及对齐填充
   unsigned char	e_ident[EI_NIDENT];	/* Magic number and other info */
+  // ELF文件类型, 有未知、重定位、可执行、动态链接、CORE5类标准类型，以及可能的扩展类型
   Elf64_Half	e_type;			/* Object file type */
+  // ELF支持的机器类型， CPU体系结构相关
   Elf64_Half	e_machine;		/* Architecture */
+  // 有效值只有EV_CURRENT
   Elf64_Word	e_version;		/* Object file version */
+  // 程序入口点的虚拟地址
   Elf64_Addr	e_entry;		/* Entry point virtual address */
+  // 非零，表示 程序头表 在文件中的偏移，单位字节；零，表示无该表。
   Elf64_Off	e_phoff;		/* Program header table file offset */
+  // 非零，表示 节区头表 在文件中的偏移，单位字节；零，表示无该表
   Elf64_Off	e_shoff;		/* Section header table file offset */
+  // CPU相关， 其值来自EF_`machine_flag`
   Elf64_Word	e_flags;		/* Processor-specific flags */
+  // sizeof(Elf64_Ehdr) in bytes.
   Elf64_Half	e_ehsize;		/* ELF header size in bytes */
+  //  sizeof(Elf64_Phdr) in bytes.
   Elf64_Half	e_phentsize;		/* Program header table entry size */
+  // program header 个数
   Elf64_Half	e_phnum;		/* Program header table entry count */
+  // sizeof(Elf64_Shdr) in bytes.
   Elf64_Half	e_shentsize;		/* Section header table entry size */
+  // section header 个数
   Elf64_Half	e_shnum;		/* Section header table entry count */
+  // 节区头字符串表的索引（在节区头表中索引）。若无，该值定义为SHN_UNDEF.
   Elf64_Half	e_shstrndx;		/* Section header string table index */
 } Elf64_Ehdr;
 
