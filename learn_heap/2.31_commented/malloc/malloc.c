@@ -3653,7 +3653,7 @@ _int_malloc (mstate av, size_t bytes)
 #if USE_TCACHE
 	  /* While we're here, if we see other chunks of the same size,
 	     stash them in the tcache.  */
-             // 返回结果前，将当前smallbin中chunk填满对应tcache.
+          // 返回结果前，将当前smallbin中chunk填满对应tcache.
 	  size_t tc_idx = csize2tidx (nb);
 	  if (tcache && tc_idx < mp_.tcache_bins)
 	    {
@@ -3730,7 +3730,8 @@ _int_malloc (mstate av, size_t bytes)
   // 合适的chunk，并将已查找过的chunk放入对应的smallbin/largebin中。
   for (;; )
     {
-      int iters = 0;
+      int iters = 0;    // 记录循环次数，超过最大循环次数后即使ub非空也退出
+      // 当unsortedbin非空时，遍历unlink
       while ((victim = unsorted_chunks (av)->bk) != unsorted_chunks (av))
         {
           bck = victim->bk;
