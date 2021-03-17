@@ -412,15 +412,25 @@ typedef struct
 
 typedef struct
 {
+  // 节区名位于字符串表中的索引
   Elf64_Word	sh_name;		/* Section name (string tbl index) */
+  // 节区类型
   Elf64_Word	sh_type;		/* Section type */
+  // 节区访问属性,RWX等
   Elf64_Xword	sh_flags;		/* Section flags */
+  // 节区加载到内存时的va， 单位:字节
   Elf64_Addr	sh_addr;		/* Section virtual addr at execution */
+  // 文件系统中，节区相对文件起点的偏移， 单位：字节
   Elf64_Off	sh_offset;		/* Section file offset */
+  // 节区在文件中的大小；若type为SHT_NOBITS，则即使sh_size非零，而文件中却不占任何空间。
   Elf64_Xword	sh_size;		/* Section size in bytes */
+  // 其他与当前节关联的节的索引（节区表中索引）, 具体含义是节区类型相关。
   Elf64_Word	sh_link;		/* Link to another section */
+  // 额外信息，与节区类型相关
   Elf64_Word	sh_info;		/* Additional section information */
+  // sh_addr的对齐量，需满足sh_addr % sh_addralign == 0
   Elf64_Xword	sh_addralign;		/* Section alignment */
+  // 对于像存放符号表的节这种固定大小的节区，该值为节区大小；0则表示节区大小不固定。
   Elf64_Xword	sh_entsize;		/* Entry size if section holds table */
 } Elf64_Shdr;
 
@@ -704,13 +714,20 @@ typedef struct
 
 typedef struct
 {
+  // 当前程序头所描述的段所对应的类型：重点关注PT_LOAD, PT_DYNAMIC
   Elf64_Word	p_type;			/* Segment type */
   Elf64_Word	p_flags;		/* Segment flags */
+  // 对应段相对文件开头的偏移；对可装载段，offset与vaddr模页面大小后应相同
   Elf64_Off	p_offset;		/* Segment file offset */
+  // 对应段在内存中的起始位置（虚拟地址）
   Elf64_Addr	p_vaddr;		/* Segment virtual address */
+  // 内存的物理地址，保留给不使用虚拟内存的系统用
   Elf64_Addr	p_paddr;		/* Segment physical address */
+  // 文件系统中，节的大小（字节），可为零。
   Elf64_Xword	p_filesz;		/* Segment size in file */
+  // 内存中，节的大小（字节），可为零。
   Elf64_Xword	p_memsz;		/* Segment size in memory */
+  // 0/1表示无需对齐；否则为一个2幂次数，满足p_vaddr % p_algin == p_offset；文件系统和内存中都用该值对齐。
   Elf64_Xword	p_align;		/* Segment alignment */
 } Elf64_Phdr;
 
