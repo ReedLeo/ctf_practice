@@ -14,6 +14,46 @@
 #define print_member(ptr, mem, fmt) { printf(#mem ": " fmt "\n", ptr->mem); }
 #define at_offset(ptr, off) ((char*)(ptr) + (off))
 
+#define GENERATE_NAME(prefix, name) [prefix##name] = #name
+#define GENERATE_STV_NAME(name) GENERATE_NAME(STV_, name)
+#define GENERATE_STT_NAME(name) GENERATE_NAME(STT_, name)
+#define GENERATE_STB_NAME(name) GENERATE_NAME(STB_, name)
+
+const static char* gs_sym_bind_name[] = {
+	GENERATE_STB_NAME(LOCAL),
+	GENERATE_STB_NAME(GLOBAL),
+	GENERATE_STB_NAME(WEAK),
+	GENERATE_STB_NAME(NUM),
+	GENERATE_STB_NAME(LOOS),
+	GENERATE_STB_NAME(GNU_UNIQUE),
+	GENERATE_STB_NAME(HIOS),
+	GENERATE_STB_NAME(LOPROC),
+	GENERATE_STB_NAME(HIPROC),
+};
+
+const static char* gs_sym_type_name[] = {
+	GENERATE_STT_NAME(NOTYPE),
+	GENERATE_STT_NAME(OBJECT),
+	GENERATE_STT_NAME(FUNC),
+	GENERATE_STT_NAME(SECTION),
+	GENERATE_STT_NAME(FILE),
+	GENERATE_STT_NAME(COMMON),
+	GENERATE_STT_NAME(TLS),
+	GENERATE_STT_NAME(NUM),
+	GENERATE_STT_NAME(LOOS),
+	GENERATE_STT_NAME(GNU_IFUNC),
+	GENERATE_STT_NAME(HIOS),
+	GENERATE_STT_NAME(LOPROC),
+	GENERATE_STT_NAME(HIPROC),
+};
+
+const static char* gs_sym_visi_name[] = {
+	GENERATE_STV_NAME(DEFAULT),
+	GENERATE_STV_NAME(INTERNAL),
+	GENERATE_STV_NAME(HIDDEN),
+	GENERATE_STV_NAME(PROTECTED),
+};
+
 char* getName(Elf64_Ehdr* pEhdr, Elf64_Shdr* pShdr, Elf64_Word idx)
 {
 	char* pNameArr = NULL;
@@ -48,13 +88,13 @@ void listSymName(Elf64_Ehdr* pEhdr, Elf64_Shdr* pSymHdr)
 	// skip the entry_0, which is reserved.
 	for (size_t i = 1; i < entnum; ++i)
 	{
-		printf("%-7d: %08x  %04d %s  %s %s  ", i, pSymEnt[i].st_value, pSymEnt[i].st_size
-			, ELF64_ST_BIND(pSymEnt[i].st_info)
-			, ELF64_ST_TYPE(pSymEnt[i].st_info)
-			, 
+		printf("%7d: %016x  %04d %-6s %-6s %s  %-03d %s\n", i, pSymEnt[i].st_value, pSymEnt[i].st_size
+			, gs_sym_bind_name[ELF64_ST_BIND(pSymEnt[i].st_info)]
+			, gs_sym_type_name[ELF64_ST_TYPE(pSymEnt[i].st_info)]
+			, gs_sym_visi_name[ELF64_ST_VISIBILITY(pSymEnt[i].st_other)]
+			, pSymEnt[i].st_shndx
+			, getName(pEhdr, pNameHdr, pSymEnt[i].st_name) 
 		);
-		printf("\tname: %s\n", getName(pEhdr, pNameHdr, pSymEnt[i].st_name) );
-		//printf("\ttype: %s\n", );
 	}
 
 }
