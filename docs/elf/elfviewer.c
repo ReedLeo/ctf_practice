@@ -88,18 +88,31 @@ void listSymName(Elf64_Ehdr* pEhdr, Elf64_Shdr* pSymHdr)
 	// skip the entry_0, which is reserved.
 	for (size_t i = 1; i < entnum; ++i)
 	{
-		printf("%7d: %016x  %04d %-6s %-6s %s  %-03d %s\n", i, pSymEnt[i].st_value, pSymEnt[i].st_size
-			, gs_sym_bind_name[ELF64_ST_BIND(pSymEnt[i].st_info)]
+		printf("%7d: %016x  %4d %-7s %-6s %-7s ", i, pSymEnt[i].st_value, pSymEnt[i].st_size
 			, gs_sym_type_name[ELF64_ST_TYPE(pSymEnt[i].st_info)]
+			, gs_sym_bind_name[ELF64_ST_BIND(pSymEnt[i].st_info)]
 			, gs_sym_visi_name[ELF64_ST_VISIBILITY(pSymEnt[i].st_other)]
-			, pSymEnt[i].st_shndx
-			, getName(pEhdr, pNameHdr, pSymEnt[i].st_name) 
 		);
+		switch (pSymEnt[i].st_shndx) 
+		{
+		case SHN_UNDEF:
+			printf("UND ");
+			break;
+		case SHN_ABS:
+			printf("ABS ");
+			break;
+		case SHN_COMMON:
+			printf("COM ");
+		default:
+			printf("%3d ", pSymEnt[i].st_shndx);
+			break;
+		}
+		printf("%s\n", getName(pEhdr, pNameHdr, pSymEnt[i].st_name));
 	}
 
 }
 
-void parseDynSym(Elf64_Ehdr* pEhdr)
+void parseSym(Elf64_Ehdr* pEhdr)
 {
 	Elf64_Shdr* pShdrTbl = NULL;
 	Elf64_Shdr* pDynSecHdr = NULL;
@@ -114,7 +127,7 @@ void parseDynSym(Elf64_Ehdr* pEhdr)
 
 	for (uint16_t i = 0; i < secnum; ++i)
 	{
-		if (SHT_DYNSYM == pShdrTbl[i].sh_type)
+		if (SHT_DYNSYM == pShdrTbl[i].sh_type || SHT_SYMTAB == pShdrTbl[i].sh_type)
 		{
 			printf("==========[Section: %s]===========\n", getName(pEhdr, pNameSecHdr, pShdrTbl[i].sh_name));
 			listSymName(pEhdr, &pShdrTbl[i]);
@@ -163,7 +176,7 @@ int main(int argc, char** argv)
 	print_member(pEhdr, e_shnum, 		"%#04x");
 	print_member(pEhdr, e_shstrndx, 	"%#04x");
 
-	parseDynSym(pEhdr);
+	parseSym(pEhdr);
 
 	munmap(pEhdr, filesz);
 	return 0;
