@@ -64,12 +64,19 @@ _dl_fixup (
 # endif
 	   struct link_map *l, ElfW(Word) reloc_arg)
 {
+  // symtab -> .dynsym section (sh_addr)
   const ElfW(Sym) *const symtab
     = (const void *) D_PTR (l, l_info[DT_SYMTAB]);
+  // strtab -> .dynstr section (sh_addr)
   const char *strtab = (const void *) D_PTR (l, l_info[DT_STRTAB]);
-
+  // reloc -> .rel.plt section (sh_addr) + reloc_arg
   const PLTREL *const reloc
     = (const void *) (D_PTR (l, l_info[DT_JMPREL]) + reloc_offset);
+  /* In memory, .dynsym, .dynstr and .rel.plt are at lower address than .bss.
+   * If we can forge a fake ElfN_Sym object, a fake ElfN_Rel and a string of 
+   * function name at .bss section, and make symidx in reloc->r_info ponts to 
+   * the fake ElfN_Sym object, we can control it's resolve to the symbols we want.
+   */
   const ElfW(Sym) *sym = &symtab[ELFW(R_SYM) (reloc->r_info)];
   const ElfW(Sym) *refsym = sym;
   void *const rel_addr = (void *)(l->l_addr + reloc->r_offset);
@@ -87,6 +94,7 @@ _dl_fixup (
 
       if (l->l_info[VERSYMIDX (DT_VERSYM)] != NULL)
 	{
+          // verum -> .gnu.version (sh_addr)
 	  const ElfW(Half) *vernum =
 	    (const void *) D_PTR (l, l_info[VERSYMIDX (DT_VERSYM)]);
 	  ElfW(Half) ndx = vernum[ELFW(R_SYM) (reloc->r_info)] & 0x7fff;
@@ -108,7 +116,7 @@ _dl_fixup (
 #ifdef RTLD_ENABLE_FOREIGN_CALL
       RTLD_ENABLE_FOREIGN_CALL;
 #endif
-
+      // forge a fake sym, make (strtab + sym->st_name) points to function name we put in .bss
       result = _dl_lookup_symbol_x (strtab + sym->st_name, l, &sym, l->l_scope,
 				    version, ELF_RTYPE_CLASS_PLT, flags, NULL);
 
