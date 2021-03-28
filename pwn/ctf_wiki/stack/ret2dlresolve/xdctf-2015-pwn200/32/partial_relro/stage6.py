@@ -5,7 +5,7 @@ def debug_on():
 	if (args.DEBUG):
 		context.log_level = "debug"
 
-g_fname = "./main_partial_relro_32"
+g_fname = args.FNAME if (args.FNAME) else "./main_partial_relro_32"
 g_elf = ELF(g_fname)
 
 if (args.LOCAL):
