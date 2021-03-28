@@ -131,6 +131,7 @@ _dl_fixup (
       /* Currently result contains the base load address (or link map)
 	 of the object that defines sym.  Now add in the symbol
 	 offset.  */
+	  // value = result->l_addr + sym->st_value
       value = DL_FIXUP_MAKE_VALUE (result,
 				   SYMBOL_ADDRESS (result, sym, false));
     }
@@ -138,6 +139,7 @@ _dl_fixup (
     {
       /* We already found the symbol.  The module (and therefore its load
 	 address) is also known.  */
+	  // value = l->l_addr + sym->st_value;
       value = DL_FIXUP_MAKE_VALUE (l, SYMBOL_ADDRESS (l, sym, true));
       result = l;
     }
