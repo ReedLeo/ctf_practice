@@ -138,6 +138,7 @@ elf_machine_runtime_setup (struct link_map *l, int lazy, int profile)
 /* Initial entry point code for the dynamic linker.
    The C function `_dl_start' is the real entry point;
    its return value is the user program's entry point.  */
+   // 动态连接器(ld.so)的入口
 #define RTLD_START asm ("\n\
 .text\n\
 	.align 16\n\

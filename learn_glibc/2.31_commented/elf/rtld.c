@@ -458,6 +458,7 @@ _dl_start_final (void *arg, struct dl_start_final_info *info)
   return start_addr;
 }
 
+// 该函数由动态连接器入口函数sysdeps/x86_64/dl-machine.h:_start()调用
 static ElfW(Addr) __attribute_used__
 _dl_start (void *arg)
 {
