@@ -87,7 +87,7 @@ struct r_search_path_struct
 
    This data structure might change in future, if necessary.  User-level
    programs must avoid defining objects of this type.  */
-
+// link_map的完整定义
 struct link_map
   {
     /* These first few members are part of the protocol with the debugger.

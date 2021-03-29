@@ -80,7 +80,7 @@ extern ElfW(Dyn) _DYNAMIC[];
 
    These data structures exist in space used by the run-time dynamic linker;
    modifying them may have disastrous results.  */
-
+// 此处定义不完整；完整定义在include/link.h中
 struct link_map
   {
     /* These first few members are part of the protocol with the debugger.
