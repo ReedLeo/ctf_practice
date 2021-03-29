@@ -52,7 +52,10 @@ struct dlopen_args
 #  define NS LM_ID_BASE
 # endif
 
-
+/**
+ * dlopen_doit called by _dl_catch_exception(), which gets dlopen_doit function pointer as 
+ * argument from _dl_error_run() initially.
+*/
 static void
 dlopen_doit (void *a)
 {
