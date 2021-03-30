@@ -42,6 +42,14 @@
 # define ARCH_FIXUP_ATTRIBUTE
 #endif
 
+/**
+ * In sysdeps/x86_64/dl-runtime.c:
+ * #define reloc_offset reloc_arg * sizeof (PLTREL)
+ * #define reloc_index  reloc_arg
+ * 
+ * 32-bit: reloc_offset <=> reloc_arg
+ * 64-bit: reloc_offset = reloc_arg * sizeof(Elf64_Rela) = reloc_arg * 24
+*/
 #ifndef reloc_offset
 # define reloc_offset reloc_arg
 # define reloc_index  reloc_arg / sizeof (PLTREL)
