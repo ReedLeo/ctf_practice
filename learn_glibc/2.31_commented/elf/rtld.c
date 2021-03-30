@@ -275,6 +275,7 @@ rtld_hidden_def (_dl_starting_up)
 
 /* This is the structure which defines all variables global to ld.so
    (except those which cannot be added for some reason).  */
+// 该全局对象包含了link_map。 ld.so加载解析完成后，会将相关信息写入此全局对象。
 struct rtld_global _rtld_global =
   {
     /* Generally the default presumption without further information is an
@@ -1084,7 +1085,9 @@ load_audit_modules (struct link_map *main_map)
       notify_audit_modules_of_loaded_object (&GL(dl_rtld_map));
     }
 }
-
+/**
+ * dynamic linker自举完成后调用dl_main开始装载链接实际可执行文件以及其依赖库。
+*/
 static void
 dl_main (const ElfW(Phdr) *phdr,
 	 ElfW(Word) phnum,
@@ -1567,6 +1570,7 @@ ERROR: '%s': cannot process note segment.\n", _dl_argv[0]);
        found by the PT_INTERP name.  */
     GL(dl_rtld_map).l_name = (char *) GL(dl_rtld_map).l_libname->name;
   GL(dl_rtld_map).l_type = lt_library;
+  // 链入全局对象link_map双向（不循环）链表中
   main_map->l_next = &GL(dl_rtld_map);
   GL(dl_rtld_map).l_prev = main_map;
   ++GL(dl_ns)[LM_ID_BASE]._ns_nloaded;
