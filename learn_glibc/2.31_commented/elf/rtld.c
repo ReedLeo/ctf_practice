@@ -465,7 +465,9 @@ _dl_start (void *arg)
 #ifdef DONT_USE_BOOTSTRAP_MAP
 # define bootstrap_map GL(dl_rtld_map)
 #else
+  // 该结构包含了strcut link_map.
   struct dl_start_final_info info;
+  // bootstrap_map是一个struct link_map对象
 # define bootstrap_map info.l
 #endif
 
