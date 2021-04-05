@@ -72,6 +72,7 @@ _dl_fixup (
 # endif
 	   struct link_map *l, ElfW(Word) reloc_arg)
 {
+  // D_PTR (l, l_info[DT_SYMTAB]) <==> l->l_info[DT_SYMTAB]->d_un.d_ptr
   // symtab -> .dynsym section (sh_addr)
   const ElfW(Sym) *const symtab
     = (const void *) D_PTR (l, l_info[DT_SYMTAB]);
@@ -96,6 +97,9 @@ _dl_fixup (
 
    /* Look up the target symbol.  If the normal lookup rules are not
       used don't look in the global scope.  */
+  /** 
+   * 伪造link_map进行攻击时，会令sym->st_other & 0x3 != 0, 走else分支
+   */
   if (__builtin_expect (ELFW(ST_VISIBILITY) (sym->st_other), 0) == 0)
     {
       const struct r_found_version *version = NULL;
@@ -148,6 +152,13 @@ _dl_fixup (
       /* We already found the symbol.  The module (and therefore its load
 	 address) is also known.  */
 	  // value = l->l_addr + sym->st_value;
+	  /**
+	   *  在无泄露的情况下， 要使得value = target_func_addr, 可以按如下方式构造:
+	   * 	1. l->addr = target_func_addr - resolved_func_addr;
+	   * 	2. sym->st_value = resolved_func_addr;	
+	   *  在没有泄露途径时，可以令sym = got_of_resolved_func - offset(st_value), 即
+	   *  sym = got_of_resolved_func - 8
+	  */
       value = DL_FIXUP_MAKE_VALUE (l, SYMBOL_ADDRESS (l, sym, true));
       result = l;
     }
@@ -155,6 +166,7 @@ _dl_fixup (
   /* And now perhaps the relocation addend.  */
   value = elf_machine_plt_value (l, reloc, value);
 
+  // elf_ifunc_invoke调用了解析出来的函数
   if (sym != NULL
       && __builtin_expect (ELFW(ST_TYPE) (sym->st_info) == STT_GNU_IFUNC, 0))
     value = elf_ifunc_invoke (DL_FIXUP_VALUE_ADDR (value));
@@ -163,6 +175,7 @@ _dl_fixup (
   if (__glibc_unlikely (GLRO(dl_bind_not)))
     return value;
 
+  // *rel_addr = value; 因此，构造fake link_map时，需令rel_addr属于一个可写范围。
   return elf_machine_fixup_plt (l, result, refsym, sym, reloc, rel_addr, value);
 }
 
