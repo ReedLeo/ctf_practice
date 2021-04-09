@@ -3509,7 +3509,7 @@ __libc_calloc (size_t n, size_t elem_size)
  */
 
 static void *
-_int_malloc (mstate av, size_t bytes)
+_f (mstate av, size_t bytes)
 {
   INTERNAL_SIZE_T nb;               /* normalized request size */
   unsigned int idx;                 /* associated bin index */
@@ -3762,7 +3762,7 @@ _int_malloc (mstate av, size_t bytes)
 
           if (in_smallbin_range (nb) && // 申请大小属于smallbin范围
               bck == unsorted_chunks (av) &&    // 当前unsortedbin只有一个chunk
-              victim == av->last_remainder &&   // 当前chunk是lats_remainder
+              victim == av->last_remainder &&   // 当前chunk是lats_remainder。注意，这里并不是首次产生last_remainder的地方！！
               (unsigned long) (size) > (unsigned long) (nb + MINSIZE))  // 申请大小小于当前unsortedbin大小，并且分割该ub后，剩余部分还大于MINSIZE(可以作为有效chunk)
             {
               /* split and reattach remainder */
@@ -3829,7 +3829,7 @@ _int_malloc (mstate av, size_t bytes)
             }
 
           /* place chunk in bin */
-          // 当前遍历到的chunk不满足要求，就放入对应small/large bin中
+          // 当前遍历到的chunk不满可分配足要求，就放入对应small/large bin中
           if (in_smallbin_range (size))
             {
               victim_index = smallbin_index (size);
@@ -3924,7 +3924,8 @@ _int_malloc (mstate av, size_t bytes)
 #define MAX_ITERS       10000
           if (++iters >= MAX_ITERS)
             break;
-        }
+        } 
+        // 从unsortedbin中回收各类bin的大循环结束，ub还是可能非空。
 
 #if USE_TCACHE
       /* If all the small chunks we found ended up cached, return one now.  */
@@ -3933,18 +3934,23 @@ _int_malloc (mstate av, size_t bytes)
 	  return tcache_get (tc_idx);
 	}
 #endif
-
+        /**
+         * 继续往后执行说明：
+         *     1. 前面的fastbin, smallbin遍历完都没有大小匹配的chunk;
+         *     2. 回收unsortedbin时，没有chunk大小完全匹配的chunk；特别的，对于ub中最后一个chunk:
+         *      即使它的大小大于所需，只要不是last_remainder就不会进行切分。
+         */
       /*
          If a large request, scan through the chunks of current bin in
          sorted order to find smallest that fits.  Use the skip list for this.
        */
-
+      // 提前处理largebin范围内的请求，保证能执行到后续代码 的
       if (!in_smallbin_range (nb))
         {
           bin = bin_at (av, idx);
 
           /* skip scan if empty or largest chunk is too small */
-          if ((victim = first (bin)) != bin
+          if ((victim = first (bin)) != bin     // 从largebin中最大的块开始降序遍历，best-fit
 	      && (unsigned long) chunksize_nomask (victim)
 	        >= (unsigned long) (nb))
             {
@@ -3999,6 +4005,7 @@ _int_malloc (mstate av, size_t bytes)
               alloc_perturb (p, bytes);
               return p;
             }
+            // 执行到此，说明largebin[idx]中没有足够大的chunk可以使用。
         }
 
       /*
@@ -4011,7 +4018,11 @@ _int_malloc (mstate av, size_t bytes)
          The particular case of skipping all bins during warm-up phases
          when no chunks have been returned yet is faster than it might look.
        */
-
+      /**
+       * 两种情况会执行到这里：
+       *    1. 请求为smallbin；
+       *    2. 请求largebin，本身所对应的largebin[idx] 中没有足够大的chunk
+       */
       ++idx;
       bin = bin_at (av, idx);
       block = idx2block (idx);
@@ -4026,10 +4037,11 @@ _int_malloc (mstate av, size_t bytes)
               do
                 {
                   if (++block >= BINMAPSIZE) /* out of bins */
+                    // 遍历bin[]都找不到一个非空的bin，只能向top切割。
                     goto use_top;
                 }
               while ((map = av->binmap[block]) == 0);
-
+              // 找到第一个大于所需且(可能)非空的bin（smallbin，largebin都有可能）
               bin = bin_at (av, (block << BINMAPSHIFT));
               bit = 1;
             }
@@ -4047,14 +4059,14 @@ _int_malloc (mstate av, size_t bytes)
 
           /*  If a false alarm (empty bin), clear the bit. */
           if (victim == bin)
-            {
+            { // 当前bin是空的，清空（置零）对应bitmap中的标记bit
               av->binmap[block] = map &= ~bit; /* Write through */
               bin = next_bin (bin);
               bit <<= 1;
             }
 
           else
-            {
+            { // 终于找到足够大的非空bin，从中摘取chunk使用。视情况决定是否切割之。
               size = chunksize (victim);
 
               /*  We know the first chunk in this bin is big enough to use. */
@@ -4066,6 +4078,7 @@ _int_malloc (mstate av, size_t bytes)
               unlink_chunk (av, victim);
 
               /* Exhaust */
+              // 切分后，剩余不够最小chunk所需，则不切，整块分配。
               if (remainder_size < MINSIZE)
                 {
                   set_inuse_bit_at_offset (victim, size);
@@ -4075,7 +4088,10 @@ _int_malloc (mstate av, size_t bytes)
 
               /* Split */
               else
-                {
+                { /*
+                  * 切完剩下还能用，则切剩下的插入unsortedbin；如果本次切割操作是因申请smallbin引起的，
+                  * 则剩余部分还会记录到arena->last_remainder中。
+                  */
                   remainder = chunk_at_offset (victim, nb);
 
                   /* We cannot assume the unsorted list is empty and therefore
@@ -4090,10 +4106,11 @@ _int_malloc (mstate av, size_t bytes)
                   fwd->bk = remainder;
 
                   /* advertise as last remainder */
+                  // 只有smallbin的申请引起的split才会记录到last_remainder中
                   if (in_smallbin_range (nb))
                     av->last_remainder = remainder;
                   if (!in_smallbin_range (remainder_size))
-                    {
+                    {   // 清理largebin的next指针
                       remainder->fd_nextsize = NULL;
                       remainder->bk_nextsize = NULL;
                     }
