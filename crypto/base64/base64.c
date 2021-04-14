@@ -35,7 +35,7 @@ int getB64MapIdx(char ch)
 * 	and store the encoded bytes to _Out_pResult.
 * Arguments:
 * 	_In_pPlainText: Points to the null-terminated string, which should be padded with '\0' in 3 bytes alignment, is to be encoded by base64.
-*	count: The length of string _In_pPlainText, excludes the terminated-null.
+*	count: The length of unpaded plain string, _In_pPlainText is padded, excludes the terminated-null.
 *	_Out_pResult: Where the encoded base64 bytes store.
 */
 int do_b64Encode(const char* _In_pPlainText, const size_t count, char* _Out_pResult)
