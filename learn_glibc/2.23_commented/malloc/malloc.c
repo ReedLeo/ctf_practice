@@ -4146,9 +4146,9 @@ _int_free (mstate av, mchunkptr p, int have_lock)
       {
 	/* Check that the top of the bin is not the record we are going to add
 	   (i.e., double free).  */
-  // 简单的double free检查
-  // 对应fastbin上，第一个chunk不能是当前待释放的chunk
-  // free(A), free(B), free(A) 即可绕过
+        // 简单的double free检查
+        // 对应fastbin上，第一个chunk不能是当前待释放的chunk
+        // free(A), free(B), free(A) 即可绕过
 	if (__builtin_expect (old == p, 0))
 	  {
 	    errstr = "double free or corruption (fasttop)";
