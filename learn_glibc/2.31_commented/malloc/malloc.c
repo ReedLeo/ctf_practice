@@ -3509,7 +3509,7 @@ __libc_calloc (size_t n, size_t elem_size)
  */
 
 static void *
-_f (mstate av, size_t bytes)
+_int_malloc (mstate av, size_t bytes)
 {
   INTERNAL_SIZE_T nb;               /* normalized request size */
   unsigned int idx;                 /* associated bin index */
