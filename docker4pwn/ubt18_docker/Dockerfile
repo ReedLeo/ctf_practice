@@ -103,33 +103,8 @@ RUN git clone https://github.com/pwndbg/pwndbg && \
 
 WORKDIR /ctf/work/
 
-COPY --from=skysider/glibc_builder64:2.19 /glibc/2.19/64 /glibc/2.19/64
-COPY --from=skysider/glibc_builder32:2.19 /glibc/2.19/32 /glibc/2.19/32
-
-COPY --from=skysider/glibc_builder64:2.23 /glibc/2.23/64 /glibc/2.23/64
-COPY --from=skysider/glibc_builder32:2.23 /glibc/2.23/32 /glibc/2.23/32
-
-COPY --from=skysider/glibc_builder64:2.24 /glibc/2.24/64 /glibc/2.24/64
-COPY --from=skysider/glibc_builder32:2.24 /glibc/2.24/32 /glibc/2.24/32
-
-COPY --from=skysider/glibc_builder64:2.26 /glibc/2.26/64 /glibc/2.26/64
-COPY --from=skysider/glibc_builder32:2.26 /glibc/2.26/32 /glibc/2.26/32
-
 COPY --from=skysider/glibc_builder64:2.27 /glibc/2.27/64 /glibc/2.27/64
 COPY --from=skysider/glibc_builder32:2.27 /glibc/2.27/32 /glibc/2.27/32
-
-COPY --from=skysider/glibc_builder64:2.28 /glibc/2.28/64 /glibc/2.28/64
-COPY --from=skysider/glibc_builder32:2.28 /glibc/2.28/32 /glibc/2.28/32
-
-COPY --from=skysider/glibc_builder64:2.29 /glibc/2.29/64 /glibc/2.29/64
-COPY --from=skysider/glibc_builder32:2.29 /glibc/2.29/32 /glibc/2.29/32
-
-COPY --from=skysider/glibc_builder64:2.30 /glibc/2.30/64 /glibc/2.30/64
-COPY --from=skysider/glibc_builder32:2.30 /glibc/2.30/32 /glibc/2.30/32
-
-COPY --from=skysider/glibc_builder64:2.31 /glibc/2.31/64 /glibc/2.31/64 
-COPY --from=skysider/glibc_builder32:2.31 /glibc/2.31/32 /glibc/2.31/32
-
 
 RUN	echo export TERM=screen-256color  >> ~/.zshrc && \
 	echo export LC_ALL=en_US.UTF-8 >> ~/.zshrc && \
