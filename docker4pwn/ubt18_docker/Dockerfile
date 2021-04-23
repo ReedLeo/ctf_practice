@@ -103,8 +103,11 @@ RUN git clone https://github.com/pwndbg/pwndbg && \
 
 WORKDIR /ctf/work/
 
-COPY --from=skysider/glibc_builder64:2.27 /glibc/2.27/64 /glibc/2.27/64
-COPY --from=skysider/glibc_builder32:2.27 /glibc/2.27/32 /glibc/2.27/32
+#COPY --from=skysider/glibc_builder64:2.27 /glibc/2.27/64 /glibc/2.27/64
+#COPY --from=skysider/glibc_builder32:2.27 /glibc/2.27/32 /glibc/2.27/32
+
+COPY linux_server linux_server64 /ctf/
+RUN chmod a+x /ctf/linux_server /ctf/linux_server64
 
 RUN	echo export TERM=screen-256color  >> ~/.zshrc && \
 	echo export LC_ALL=en_US.UTF-8 >> ~/.zshrc && \
