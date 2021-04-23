@@ -3829,7 +3829,7 @@ _int_malloc (mstate av, size_t bytes)
             }
 
           /* place chunk in bin */
-          // 当前遍历到的chunk不满可分配足要求，就放入对应small/large bin中
+          // 当前遍历到的chunk不满足要求，就放入对应small/large bin中
           if (in_smallbin_range (size))
             {
               victim_index = smallbin_index (size);
@@ -3864,6 +3864,9 @@ _int_malloc (mstate av, size_t bytes)
                       * 而bck不是第一个入队的，故bck没有维护两个*_nextsize指针。
                       * 于此相反的是，fd方向上的fwd总是它这个大小chunk中第一个入队的，必然维护了
                       * *_nextsize指针。
+                      * *******************
+                      * Largebin Attack: especially >= 2.29
+                      *   fwd->fd->bk_nextsize is unchecked, so we can hack this field via UAF.
                       */
                       victim->bk_nextsize = fwd->fd->bk_nextsize; 
                       fwd->fd->bk_nextsize = victim->bk_nextsize->fd_nextsize = victim;
