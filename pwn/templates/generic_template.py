@@ -2,6 +2,7 @@ from pwn import *
 
 g_fname = args.FNAME 
 g_elf = ELF(g_fname)
+context.binary = g_elf
 g_libcname = args.LIB if (args.LIB) else "/lib/x86_x64-linux-gnu/libc.so.6"
 
 if (LOCAL):
