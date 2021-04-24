@@ -3046,6 +3046,13 @@ __libc_malloc (size_t bytes)
   DIAG_PUSH_NEEDS_COMMENT;
   if (tc_idx < mp_.tcache_bins
       && tcache
+      /**
+       * <= 2.29: 只要能UAF写tcache的fd即可，无视tcache->counts[tc_idx]
+       *   tcache->entries[tc_idx] != NULL
+       * 
+       * >= 2.30: 从2.30开始，变成检查tcache->counts[tc_idx]
+       *   tcache->counts[tc_idx] > 0
+      */
       && tcache->counts[tc_idx] > 0)
     {
       return tcache_get (tc_idx);
@@ -3872,7 +3879,7 @@ _int_malloc (mstate av, size_t bytes)
                       fwd->fd->bk_nextsize = victim->bk_nextsize->fd_nextsize = victim;
                     }
                   else
-                    {   // 插在large队列中间
+                    { // 插在large队列中间
                       assert (chunk_main_arena (fwd));
                       // 按chunk大小降序查找待插入位置：即找到第队列中第一个>=victim的chunk。
                       while ((unsigned long) size < chunksize_nomask (fwd))
@@ -3892,12 +3899,14 @@ _int_malloc (mstate av, size_t bytes)
                         { // 后续chunk均比victim大
                           victim->fd_nextsize = fwd;
                           victim->bk_nextsize = fwd->bk_nextsize;
+                          // 2.29开始增加此处检测
                           if (__glibc_unlikely (fwd->bk_nextsize->fd_nextsize != fwd))
                             malloc_printerr ("malloc(): largebin double linked list corrupted (nextsize)");
                           fwd->bk_nextsize = victim;
                           victim->bk_nextsize->fd_nextsize = victim;
                         }
                       bck = fwd->bk;
+                      // 2.29开始增加此处检测
                       if (bck->fd != fwd)
                         malloc_printerr ("malloc(): largebin double linked list corrupted (bk)");
                     }
