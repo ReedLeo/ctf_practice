@@ -4382,6 +4382,7 @@ _int_free (mstate av, mchunkptr p, int have_lock)
       prevsize = prev_size (p);
       size += prevsize;
       p = chunk_at_offset(p, -((long) prevsize));
+      // This check starts from 2.29. So we prefer to extending forward after glibc-2.29.
       if (__glibc_unlikely (chunksize(p) != prevsize))
         malloc_printerr ("corrupted size vs. prev_size while consolidating");
       unlink_chunk (av, p);
