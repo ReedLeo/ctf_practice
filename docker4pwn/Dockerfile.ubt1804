@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 RUN  sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
 RUN  sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
 RUN  apt-get clean
-RUN apt-get update
+RUN  apt-get update
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ Asia/Shanghai
@@ -102,9 +102,6 @@ RUN git clone https://github.com/pwndbg/pwndbg && \
     cd pwndbg && ./setup.sh && cd ..
 
 WORKDIR /ctf/work/
-
-#COPY --from=skysider/glibc_builder64:2.27 /glibc/2.27/64 /glibc/2.27/64
-#COPY --from=skysider/glibc_builder32:2.27 /glibc/2.27/32 /glibc/2.27/32
 
 COPY linux_server linux_server64 /ctf/
 RUN chmod a+x /ctf/linux_server /ctf/linux_server64
