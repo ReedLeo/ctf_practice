@@ -3606,7 +3606,7 @@ _int_malloc(mstate av, size_t bytes)
            */
             /*
                 1. 如果是smallbin request， 
-                2. 且last remainder是unsorted bin里唯一的一个chunk
+                2. 且last remainder是unsorted bin里唯一的一个chunk，但此处并非产生首个last_remainder的地方。
                 3. 且切分后剩余部分仍能作为一个chunk
                 则尝试在该chunk上进行切分、分配
             */
@@ -3649,6 +3649,7 @@ _int_malloc(mstate av, size_t bytes)
 
             /* remove from unsorted list */
             // 从unsortedbin双向链表中摘除当前chunk
+            // Unsortedbin Attack!!
             unsorted_chunks(av)->bk = bck;
             bck->fd = unsorted_chunks(av);
 
