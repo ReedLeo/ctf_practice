@@ -755,6 +755,10 @@ _IO_get_column (_IO_FILE *fp)
 #endif
 
 
+/**
+ * abort(), exit(), main()返回均会调用该函数来
+ * 将IO缓冲区中剩余数据写出
+*/
 int
 _IO_flush_all_lockp (int do_lock)
 {
@@ -776,6 +780,10 @@ _IO_flush_all_lockp (int do_lock)
       if (do_lock)
 	_IO_flockfile (fp);
 
+        /**
+         * 要执行_IO_OVERFLOW只需要满足:
+         *  fp->_mode <= 0 && fp->_IO_write_ptr > fp->_IO_write_base
+         */
       if (((fp->_mode <= 0 && fp->_IO_write_ptr > fp->_IO_write_base)
 #if defined _LIBC || defined _GLIBCPP_USE_WCHAR_T
 	   || (_IO_vtable_offset (fp) == 0
@@ -783,6 +791,12 @@ _IO_flush_all_lockp (int do_lock)
 				    > fp->_wide_data->_IO_write_base))
 #endif
 	   )
+           /**
+            * _IO_OVERFLOW会调用fp->_vtable中的__overflow函数指针所指函数来
+            * 写出IO缓冲区中剩余数据。
+            * stdin, stdout, stderr默认_vtable=&_IO_file_jumps,
+            * 而_IO_file_jumps.__overflow指向libio/fileops.c:_IO_new_file_overflow(…)
+           */
 	  && _IO_OVERFLOW (fp, EOF) == EOF)
 	result = EOF;
 
