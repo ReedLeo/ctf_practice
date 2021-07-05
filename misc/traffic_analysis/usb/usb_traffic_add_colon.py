@@ -1,11 +1,10 @@
-
-#!/bin/usr/env python3
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 import argparse
 
 def convert_by_add_colon(in_file, out_file):
-    f = open('usbdata.txt','r')
-    fi = open('out.txt','w')
+    f = open(in_file)
+    fi = open(out_file)
     while 1:
         a = f.readline().strip()
         if a:
