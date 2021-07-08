@@ -4,7 +4,7 @@ import argparse
 
 def convert_by_add_colon(in_file, out_file):
     f = open(in_file)
-    fi = open(out_file)
+    fi = open(out_file, "w")
     while 1:
         a = f.readline().strip()
         if a:

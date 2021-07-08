@@ -44,7 +44,7 @@ def get_key_map_no_colon(file_name):
 
 def get_key_map_with_colon(file_name):
     nums = []
-    keys = open('usbout.txt') # 这里填写提取出来并处理好的keyusb.txt
+    keys = open(file_name) # 这里填写提取出来并处理好的keyusb.txt
     # keys = open('keyusb.txt')
     for line in keys:
         if (is_skip_with_colon(line)):
