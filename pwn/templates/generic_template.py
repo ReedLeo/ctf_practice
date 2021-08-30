@@ -1,14 +1,15 @@
 from pwn import *
 
-g_fname = args.FNAME 
+g_fname = args.FNAME if args.FNAME else "replaced_by_your_file"
 g_elf = ELF(g_fname)
 context.binary = g_elf
-g_libcname = args.LIB if (args.LIB) else "/lib/x86_x64-linux-gnu/libc.so.6"
+g_libcname = args.LIB if (args.LIB) else "/lib/x86_64-linux-gnu/libc.so.6"
 
-if (LOCAL):
+if (args.LOCAL):
 	g_io = process(g_fname)
 else:
-	g_io = remote()
+    rhost, rport = args.REMOTE.split(":")
+	g_io = remote(rhost, int(rport))
 
 g_libc = ELF(g_libcname)
 

