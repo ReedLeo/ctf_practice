@@ -1,0 +1,1 @@
+./cmd1 "x=fla; y=g; /bin/cat \`echo \$x\$y\`"
