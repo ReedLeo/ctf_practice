@@ -10,4 +10,5 @@ qemu-system-x86_64 \
     -monitor /dev/null \
     -no-reboot \
     -append "console=ttyS0 nokaslr nopti quiet panic=1" \
-    -s
+    -s \
+    -serial mon:stdio
