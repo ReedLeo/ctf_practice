@@ -1,7 +1,7 @@
 #!/bin/sh
 qemu-system-x86_64 \
     -m 128M \
-    -cpu kvm64 \
+    -cpu kvm64,+smep,+smap \
     -kernel vmlinuz \
     -initrd initramfs.cpio.gz \
     -hdb flag.txt \
@@ -9,6 +9,6 @@ qemu-system-x86_64 \
     -nographic \
     -monitor /dev/null \
     -no-reboot \
-    -append "console=ttyS0 nokaslr nopti quiet panic=1" \
+    -append "console=ttyS0 kaslr kpti=1 quiet panic=1" \
     -s \
     -serial mon:stdio
