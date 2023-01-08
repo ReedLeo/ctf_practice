@@ -7,4 +7,5 @@ qemu-system-x86_64 \
     -monitor /dev/null \
     -m 64M --nographic  \
     -smp cores=1,threads=1 \
-    -cpu kvm64,+smep
+    -cpu kvm64,+smep \
+    -s
