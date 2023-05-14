@@ -86,7 +86,7 @@ def parse_pop_to_idx():
     print(f'\tpop() -> idx=0x{idx:x}')
     print(f'\tpop() -> val=0x{val:x}')
     orgVal = read_dbg_dword(vmStackBase+4*idx)
-    print(f'\tvmStack[{idx:x}](@{vmStackBase+4*idx:x}) = 0x{val:x}, where orignial value=0x{orgVal:x}')
+    print(f'\tvmStack[0x{idx:x}](@0x{vmStackBase+4*idx:x}) = 0x{val:x}, where orignial value=0x{orgVal:x}')
 
 def parse_push_from_idx():
     idx = read_dbg_dword(vmStackBase+4*vmSp)
@@ -173,7 +173,7 @@ def parse_jz():
     if (res):
         print(f'\tcontinue')
     else:
-        print(f'\tjmp to pOpcode[0x{vmPc+1}]=0x{target_pc}')
+        print(f'\tjmp to pOpcode[0x{vmPc+1}]=0x{target_pc:x}')
 
 def parse_write_line():
     start_idx = read_dbg_dword(vmStackBase+4*vmSp)
