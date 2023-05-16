@@ -1,0 +1,61 @@
+Python>parse_ops()
+0x0: 8, mov reg[0], 0x0; vmPc+=3; 
+0x3: 8, mov reg[2], 0x46; vmPc+=3; 
+0x6: 14, jmp, vmPc = &pOpcodes[0x15]
+0x8: 10, push reg[0], --vmSp, vmPc+=2
+0xa: 9, pop reg[1], ++vmSp, vmPc += 2
+0xc: 11, r0 = getchar(), ++vmPc
+0xd: 10, push reg[0], --vmSp, vmPc+=2
+0xf: 10, push reg[1], --vmSp, vmPc+=2
+0x11: 9, pop reg[0], ++vmSp, vmPc += 2
+0x13: 17, ++reg[1], vmPc+=2
+0x15: 13, cmp reg[0], reg[2], vmPc+=3, and set flags
+0x18: 15, jnz, if (flags.eq == 0) vmPc = &pOpcodes[0x8]
+
+
+
+0x1a: 8, mov reg[0], 0x0; vmPc+=3; 
+0x1d: 8, mov reg[2], 0x47; vmPc+=3; 
+0x20: 14, jmp, vmPc = &pOpcodes[0x46]
+0x22: 10, push reg[0], --vmSp, vmPc+=2
+0x24: 26, reg[1] = &reg[5], vmPc += 3 // stack top
+0x27: 29, reg[0] *= 0x4, vmPc += 3
+0x2a: 20, reg[1] -= reg[0], vmPc += 3
+0x2d: 25, reg[0] = reg[1], vmPc += 3
+0x30: 27, reg[0] = *reg[0], vmPc += 3
+0x33: 29, reg[0] *= 0x6e, vmPc += 3
+0x36: 19, reg[0] += 0x63, vmPc += 3
+0x39: 21, reg[0] ^= 0x74, vmPc += 3
+0x3c: 19, reg[0] += 0x66, vmPc += 3
+0x3f: 28, *reg[1] = reg[0], vmPc += 3
+0x42: 9, pop reg[0], ++vmSp, vmPc += 2
+0x44: 17, ++reg[1], vmPc+=2
+0x46: 13, cmp reg[0], reg[2], vmPc+=3, and set flags
+0x49: 15, jnz, if (flags.eq == 0) vmPc = &pOpcodes[0x22]
+
+
+0x4b: 100, check to encrypted text
+0x4c: -, nop, vmPc+=1
+0x4d: -, nop, vmPc+=1
+0x4e: -, nop, vmPc+=1
+0x4f: -, nop, vmPc+=1
+0x50: -, nop, vmPc+=1
+0x51: -, nop, vmPc+=1
+0x52: -, nop, vmPc+=1
+0x53: -, nop, vmPc+=1
+0x54: -, nop, vmPc+=1
+0x55: -, nop, vmPc+=1
+0x56: -, nop, vmPc+=1
+0x57: -, nop, vmPc+=1
+0x58: -, nop, vmPc+=1
+0x59: -, nop, vmPc+=1
+0x5a: -, nop, vmPc+=1
+0x5b: -, nop, vmPc+=1
+0x5c: -, nop, vmPc+=1
+0x5d: -, nop, vmPc+=1
+0x5e: -, nop, vmPc+=1
+0x5f: -, nop, vmPc+=1
+0x60: -, nop, vmPc+=1
+0x61: -, nop, vmPc+=1
+0x62: -, nop, vmPc+=1
+0x63: -, nop, vmPc+=1
