@@ -42,8 +42,8 @@ def parse_ops(exe):
             elif (ins_len == 6):
                 imm = u32(all_ins[vmPc+2: vmPc+6])
                 op_str = desc_str.format(r1, imm)
-            vmPc += ins_len
             print(f'0x{vmPc:04x}: {op_mp[op][0]}:\n\t{op_str}, opcode= 0x{op:02x}')
+            vmPc += ins_len
             max_reg_idx = max(max_reg_idx, r1, r2)
         else:
             print(f'0x{vmPc:04x}: unknown opcode 0x{op:02x}')

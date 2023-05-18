@@ -1,0 +1,7043 @@
+0x0000: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0007: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x000c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0013: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0018: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x001b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x001e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0022: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0027: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x002a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x002d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0030: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0034: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0039: mov_imm:
+	regs[5] = 0xfe37c2d1, opcode= 0x0a
+0x003f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0042: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0045: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0049: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x004e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0051: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0054: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0057: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x005a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x005d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0060: mov_imm:
+	regs[5] = 0xff835638, opcode= 0x0a
+0x0066: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0069: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x006c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0072: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0078: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x007c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0081: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0084: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0088: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x008d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0090: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0093: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0096: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x009a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x009f: mov_imm:
+	regs[5] = 0x63bc629f, opcode= 0x0a
+0x00a6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x00ab: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x00ae: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x00b2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x00b7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x00ba: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x00bd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x00c0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x00c3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x00c6: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x00ca: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x00cf: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x00d2: mov_imm:
+	regs[5] = 0x6beab972, opcode= 0x0a
+0x00d9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x00de: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x00e1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x00e4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x00eb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x00f0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x00f6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x00fa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x00ff: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0103: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0108: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x010b: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x010f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0114: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0117: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x011a: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x011d: mov_imm:
+	regs[5] = 0x82c88efb, opcode= 0x0a
+0x0124: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0129: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x012d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0132: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0135: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0138: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x013c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0141: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0144: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0147: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x014a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x014d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0150: mov_imm:
+	regs[5] = 0xf964bb37, opcode= 0x0a
+0x0156: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0159: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x015c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0163: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0168: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x016e: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0171: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0174: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0177: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x017a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x017d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0180: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0183: mov_imm:
+	regs[5] = 0xb8672a84, opcode= 0x0a
+0x018a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x018f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0193: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0198: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x019c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x01a1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x01a4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x01a7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x01aa: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x01ae: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x01b3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x01b6: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x01b9: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x01bc: mov_imm:
+	regs[5] = 0xf2ddb3e7, opcode= 0x0a
+0x01c3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x01c8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x01cb: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x01cf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x01d4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x01da: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x01e1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x01e6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x01ea: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x01ef: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x01f2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x01f5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x01f8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x01fc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0201: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0204: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0207: mov_imm:
+	regs[5] = 0xc435fb58, opcode= 0x0a
+0x020d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0210: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0213: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0217: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x021c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x021f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0222: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0226: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x022b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x022f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0234: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0238: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x023d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0240: mov_imm:
+	regs[5] = 0x6e9190c5, opcode= 0x0a
+0x0246: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x024a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x024f: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0252: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0258: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x025e: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0261: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0264: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0267: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x026a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x026d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0270: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0273: mov_imm:
+	regs[5] = 0xe92fe287, opcode= 0x0a
+0x027a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x027f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0282: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0285: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0289: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x028e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0291: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0294: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0297: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x029a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x029d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x02a0: mov_imm:
+	regs[5] = 0x8e08d23b, opcode= 0x0a
+0x02a7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x02ac: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x02af: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x02b2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x02b8: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x02be: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x02c1: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x02c4: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x02c8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x02cd: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x02d0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x02d3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x02d6: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x02da: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x02df: mov_imm:
+	regs[5] = 0x49bb53dd, opcode= 0x0a
+0x02e6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x02eb: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x02ee: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x02f1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x02f5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x02fa: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x02fd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0300: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0303: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0306: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0309: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x030c: mov_imm:
+	regs[5] = 0xec88c3ab, opcode= 0x0a
+0x0313: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0318: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x031b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x031e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0324: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x032a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x032d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0330: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0333: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0336: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0339: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x033d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0342: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0345: mov_imm:
+	regs[5] = 0xc718c3ae, opcode= 0x0a
+0x034b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x034f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0354: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0358: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x035d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0360: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0363: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0366: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x036a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x036f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0372: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0376: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x037b: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x037e: mov_imm:
+	regs[5] = 0xfcec2c18, opcode= 0x0a
+0x0384: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0387: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x038a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0390: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0396: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0399: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x039c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x039f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x03a2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x03a5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x03a8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x03ab: mov_imm:
+	regs[5] = 0x87f65311, opcode= 0x0a
+0x03b1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x03b4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x03b7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x03ba: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x03bd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x03c0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x03c3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x03c7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x03cc: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x03cf: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x03d2: mov_imm:
+	regs[5] = 0xa72e2b3c, opcode= 0x0a
+0x03d8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x03dc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x03e1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x03e4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x03ea: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x03f0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x03f4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x03f9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x03fc: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x03ff: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0402: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0406: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x040b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x040e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0411: mov_imm:
+	regs[5] = 0xf64c7ef3, opcode= 0x0a
+0x0417: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x041b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0420: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0424: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0429: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x042c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x042f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0432: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0435: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0439: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x043e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0442: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0447: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x044a: mov_imm:
+	regs[5] = 0xd18fb375, opcode= 0x0a
+0x0450: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0453: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0456: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x045c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0463: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0468: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x046b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x046e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0471: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0475: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x047a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x047d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0480: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0483: mov_imm:
+	regs[5] = 0x35a6de74, opcode= 0x0a
+0x048a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x048f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0493: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0498: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x049b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x049e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x04a1: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x04a4: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x04a7: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x04aa: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x04ad: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x04b1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x04b6: mov_imm:
+	regs[5] = 0x1d281975, opcode= 0x0a
+0x04bc: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x04bf: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x04c2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x04c9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x04ce: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x04d4: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x04d7: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x04db: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x04e0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x04e3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x04e6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x04e9: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x04ec: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x04f0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x04f5: mov_imm:
+	regs[5] = 0x5d0f6f38, opcode= 0x0a
+0x04fb: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x04fe: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0501: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0504: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0507: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x050a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x050d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0510: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0513: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0516: mov_imm:
+	regs[5] = 0xf90a10cd, opcode= 0x0a
+0x051c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x051f: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0523: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0528: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x052e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0535: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x053a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x053e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0543: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0546: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0549: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x054d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0552: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0555: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0558: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x055b: mov_imm:
+	regs[5] = 0xf5abbdcd, opcode= 0x0a
+0x0561: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0565: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x056a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x056d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0570: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0573: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0576: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0579: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x057c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x057f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0582: mov_imm:
+	regs[5] = 0xb469feb3, opcode= 0x0a
+0x0588: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x058b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x058e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0594: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x059a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x059d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x05a0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x05a3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x05a6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x05a9: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x05ad: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x05b2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x05b5: mov_imm:
+	regs[5] = 0xb598d12, opcode= 0x0a
+0x05bb: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x05be: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x05c1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x05c4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x05c8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x05cd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x05d0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x05d3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x05d7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x05dc: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x05df: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x05e2: mov_imm:
+	regs[5] = 0x52331330, opcode= 0x0a
+0x05e8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x05ec: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x05f1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x05f4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x05fb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0600: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0606: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0609: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x060d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0612: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0615: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0618: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x061b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x061e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0621: mov_imm:
+	regs[5] = 0xb5191ba4, opcode= 0x0a
+0x0627: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x062b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0630: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0633: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0637: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x063c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0640: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0645: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0648: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x064b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x064e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0651: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0654: mov_imm:
+	regs[5] = 0xbd3ba1f2, opcode= 0x0a
+0x065a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x065d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0660: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0666: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x066c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0670: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0675: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0678: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x067b: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x067e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0681: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0684: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0688: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x068d: mov_imm:
+	regs[5] = 0xfdea6db9, opcode= 0x0a
+0x0693: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0696: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0699: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x069d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x06a2: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x06a5: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x06a8: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x06ab: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x06ae: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x06b1: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x06b4: mov_imm:
+	regs[5] = 0x5bfa6ff5, opcode= 0x0a
+0x06bb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x06c0: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x06c3: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x06c6: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x06cd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x06d2: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x06d9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x06de: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x06e1: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x06e5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x06ea: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x06ed: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x06f0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x06f3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x06f7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x06fc: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x06ff: mov_imm:
+	regs[5] = 0x3a0acf84, opcode= 0x0a
+0x0706: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x070b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x070e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0711: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0715: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x071a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x071d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0721: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0726: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0729: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x072c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0730: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0735: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0738: mov_imm:
+	regs[5] = 0x99ad2e2d, opcode= 0x0a
+0x073e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0741: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0744: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x074a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0750: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0753: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0757: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x075c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x075f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0762: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0765: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0769: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x076e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0771: mov_imm:
+	regs[5] = 0xd4815862, opcode= 0x0a
+0x0777: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x077a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x077d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0781: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0786: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0789: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x078d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0792: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0795: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0799: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x079e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x07a2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x07a7: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x07aa: mov_imm:
+	regs[5] = 0xf02d87e9, opcode= 0x0a
+0x07b0: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x07b3: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x07b6: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x07bc: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x07c2: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x07c5: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x07c8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x07cb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x07cf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x07d4: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x07d7: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x07da: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x07de: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x07e3: mov_imm:
+	regs[5] = 0x68614086, opcode= 0x0a
+0x07ea: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x07ef: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x07f2: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x07f5: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x07f9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x07fe: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0801: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0804: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0807: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x080a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x080d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0810: mov_imm:
+	regs[5] = 0x8e042e5a, opcode= 0x0a
+0x0817: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x081c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0820: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0825: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0829: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x082e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0834: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x083a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x083d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0841: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0846: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0849: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x084c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x084f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0852: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0856: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x085b: mov_imm:
+	regs[5] = 0x44e520d1, opcode= 0x0a
+0x0861: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0864: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0867: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x086b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0870: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0873: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0876: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0879: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x087c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0880: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0885: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0888: mov_imm:
+	regs[5] = 0x6669d159, opcode= 0x0a
+0x088e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0891: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0895: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x089a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x08a0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x08a6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x08aa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x08af: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x08b3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x08b8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x08bb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x08bf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x08c4: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x08c7: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x08ca: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x08cd: mov_imm:
+	regs[5] = 0xaa812f9b, opcode= 0x0a
+0x08d3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x08d7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x08dc: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x08df: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x08e2: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x08e6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x08eb: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x08ee: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x08f2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x08f7: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x08fa: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x08fd: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0900: mov_imm:
+	regs[5] = 0x11c8ae13, opcode= 0x0a
+0x0906: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0909: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x090c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0912: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0919: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x091e: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0921: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0924: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0927: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x092a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x092d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0931: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0936: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0939: mov_imm:
+	regs[5] = 0xd4f9e52f, opcode= 0x0a
+0x093f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0942: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0945: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0949: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x094e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0951: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0955: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x095a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x095d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0961: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0966: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x096a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x096f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0972: mov_imm:
+	regs[5] = 0x97f63d13, opcode= 0x0a
+0x0978: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x097b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x097e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0984: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x098a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x098d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0991: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0996: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0999: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x099c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x099f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x09a2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x09a5: mov_imm:
+	regs[5] = 0x3dcd6efb, opcode= 0x0a
+0x09ac: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x09b1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x09b4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x09b7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x09ba: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x09bd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x09c0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x09c4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x09c9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x09cd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x09d2: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x09d5: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x09d8: mov_imm:
+	regs[5] = 0xedd09b13, opcode= 0x0a
+0x09de: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x09e1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x09e4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x09ea: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x09f0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x09f3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x09f6: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x09fa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x09ff: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0a02: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0a05: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0a08: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0a0b: mov_imm:
+	regs[5] = 0x424930bc, opcode= 0x0a
+0x0a11: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0a15: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a1a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0a1d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0a20: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0a23: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0a26: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0a2a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a2f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0a32: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0a35: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0a39: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a3e: mov_imm:
+	regs[5] = 0x3e1da0cf, opcode= 0x0a
+0x0a44: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0a47: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0a4a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0a50: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0a56: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0a59: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0a5c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0a5f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0a62: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0a66: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a6b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0a6e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0a71: mov_imm:
+	regs[5] = 0x2ad71ab8, opcode= 0x0a
+0x0a77: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0a7a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0a7e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a83: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0a86: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0a8a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a8f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0a92: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0a95: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0a99: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0a9e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0aa1: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0aa4: mov_imm:
+	regs[5] = 0x6acc675b, opcode= 0x0a
+0x0aaa: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0aae: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ab3: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0ab6: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0abc: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0ac2: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0ac5: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0ac8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0acb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0acf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ad4: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0ad7: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0adb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ae0: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0ae4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ae9: mov_imm:
+	regs[5] = 0x45c46168, opcode= 0x0a
+0x0aef: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0af2: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0af5: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0af8: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0afb: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0afe: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0b01: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0b04: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0b07: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0b0b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b10: mov_imm:
+	regs[5] = 0xf077538e, opcode= 0x0a
+0x0b16: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0b19: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0b1c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0b22: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0b28: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0b2b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0b2e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0b32: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b37: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0b3a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0b3d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0b40: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0b43: mov_imm:
+	regs[5] = 0xe5411da0, opcode= 0x0a
+0x0b49: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0b4d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b52: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0b56: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b5b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0b5e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0b62: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b67: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0b6a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0b6e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b73: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0b76: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0b7a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b7f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0b83: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0b88: mov_imm:
+	regs[5] = 0x3f1ba7bc, opcode= 0x0a
+0x0b8e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0b91: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0b94: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0b9a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0ba0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0ba4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ba9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0bad: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0bb2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0bb5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0bb8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0bbb: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0bbe: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0bc2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0bc7: mov_imm:
+	regs[5] = 0x87530743, opcode= 0x0a
+0x0bcd: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0bd0: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0bd3: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0bd6: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0bda: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0bdf: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0be2: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0be5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0be8: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0bec: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0bf1: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0bf4: mov_imm:
+	regs[5] = 0xa18f76cf, opcode= 0x0a
+0x0bfa: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0bfd: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0c01: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c06: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0c0d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c12: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0c18: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0c1b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0c1e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0c21: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0c24: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0c28: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c2d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0c30: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0c33: mov_imm:
+	regs[5] = 0x53d3f781, opcode= 0x0a
+0x0c39: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0c3c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0c3f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0c42: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0c46: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c4b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0c4e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0c51: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0c54: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0c57: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0c5a: mov_imm:
+	regs[5] = 0x8c10d6aa, opcode= 0x0a
+0x0c61: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c66: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0c69: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0c6c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0c73: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c78: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0c7f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c84: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0c88: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c8d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0c91: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0c96: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0c99: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0c9c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0c9f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0ca2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0ca5: mov_imm:
+	regs[5] = 0xa0ed1931, opcode= 0x0a
+0x0cab: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0cae: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0cb1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0cb5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0cba: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0cbd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0cc0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0cc4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0cc9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0ccc: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0ccf: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0cd3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0cd8: mov_imm:
+	regs[5] = 0x8dd4fd62, opcode= 0x0a
+0x0cde: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0ce2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ce7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0cea: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0cf1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0cf6: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0cfc: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0d00: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d05: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0d08: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0d0c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d11: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0d14: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0d17: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0d1a: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0d1d: mov_imm:
+	regs[5] = 0x352141fe, opcode= 0x0a
+0x0d23: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0d27: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d2c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0d2f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0d32: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0d35: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0d39: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d3e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0d42: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d47: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0d4a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0d4d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0d50: mov_imm:
+	regs[5] = 0xa19e0e88, opcode= 0x0a
+0x0d57: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d5c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0d5f: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0d63: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d68: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0d6e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0d74: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0d77: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0d7a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0d7d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0d80: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0d83: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0d86: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0d89: mov_imm:
+	regs[5] = 0x7ad4a330, opcode= 0x0a
+0x0d8f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0d92: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0d96: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0d9b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0d9e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0da1: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0da5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0daa: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0dad: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0db0: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0db3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0db6: mov_imm:
+	regs[5] = 0x593e613, opcode= 0x0a
+0x0dbc: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0dbf: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0dc2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0dc9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0dce: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0dd5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0dda: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0ddd: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0de0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0de3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0de7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0dec: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0df0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0df5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0df8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0dfb: mov_imm:
+	regs[5] = 0x839e3336, opcode= 0x0a
+0x0e01: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0e04: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0e08: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0e0d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0e10: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0e13: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0e16: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0e19: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0e1d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0e22: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0e25: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0e28: mov_imm:
+	regs[5] = 0xadee7d9, opcode= 0x0a
+0x0e2e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0e31: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0e34: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0e3a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0e40: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0e43: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0e46: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0e49: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0e4c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0e50: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0e55: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0e58: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0e5b: mov_imm:
+	regs[5] = 0x1179af79, opcode= 0x0a
+0x0e61: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0e64: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0e67: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0e6b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0e70: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0e73: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0e76: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0e79: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0e7d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0e82: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0e85: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0e88: mov_imm:
+	regs[5] = 0xc23a2cc4, opcode= 0x0a
+0x0e8e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0e91: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0e95: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0e9a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0ea0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0ea6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0ea9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0eac: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0eaf: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0eb2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0eb6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ebb: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0ebe: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0ec1: mov_imm:
+	regs[5] = 0x82b98fd1, opcode= 0x0a
+0x0ec7: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0ecb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ed0: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0ed3: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0ed6: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0ed9: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0edc: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0ee0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0ee5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0ee8: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0eeb: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0eee: mov_imm:
+	regs[5] = 0xdb0cd8b6, opcode= 0x0a
+0x0ef5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0efa: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0efd: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0f00: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0f06: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0f0d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0f12: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0f15: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0f19: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0f1e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0f21: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0f25: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0f2a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0f2d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0f30: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0f33: mov_imm:
+	regs[5] = 0xb8d2d5f0, opcode= 0x0a
+0x0f39: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0f3c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0f3f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0f42: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0f46: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0f4b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0f4e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0f51: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0f54: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0f57: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0f5a: mov_imm:
+	regs[5] = 0x5e8f16df, opcode= 0x0a
+0x0f60: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0f63: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0f67: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0f6c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0f72: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0f78: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0f7b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0f7e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0f81: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0f84: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0f87: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0f8b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0f90: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0f93: mov_imm:
+	regs[5] = 0x68367a84, opcode= 0x0a
+0x0f99: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0f9c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x0fa0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0fa5: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x0fa8: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x0fab: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0fae: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0fb1: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0fb4: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0fb7: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x0fba: mov_imm:
+	regs[5] = 0x5a43439a, opcode= 0x0a
+0x0fc0: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x0fc3: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x0fc7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0fcc: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x0fd2: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x0fd8: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x0fdc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0fe1: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x0fe4: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x0fe8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0fed: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x0ff0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x0ff3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x0ff6: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x0ffa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x0fff: mov_imm:
+	regs[5] = 0x9e638ca5, opcode= 0x0a
+0x1005: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1008: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x100c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1011: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1014: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1017: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x101b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1020: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1023: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1026: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1029: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x102d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1032: mov_imm:
+	regs[5] = 0xd3335bbb, opcode= 0x0a
+0x1039: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x103e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1042: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1047: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x104a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1051: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1056: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x105d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1062: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1066: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x106b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x106f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1074: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1077: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x107a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x107e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1083: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1086: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1089: mov_imm:
+	regs[5] = 0x3672abaa, opcode= 0x0a
+0x1090: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1095: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1099: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x109e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x10a1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x10a4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x10a8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x10ad: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x10b0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x10b3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x10b6: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x10b9: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x10bd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x10c2: mov_imm:
+	regs[5] = 0xac8f0cd0, opcode= 0x0a
+0x10c8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x10cb: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x10ce: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x10d5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x10da: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x10e0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x10e3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x10e6: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x10ea: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x10ef: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x10f2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x10f5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x10f8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x10fb: mov_imm:
+	regs[5] = 0x7287963f, opcode= 0x0a
+0x1101: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1105: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x110a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x110d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1110: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1113: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1117: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x111c: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x111f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1122: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1125: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1128: mov_imm:
+	regs[5] = 0xf286028e, opcode= 0x0a
+0x112e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1131: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1134: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x113b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1140: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1146: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1149: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x114c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x114f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1152: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1156: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x115b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x115e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1161: mov_imm:
+	regs[5] = 0x8d1cc0f6, opcode= 0x0a
+0x1167: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x116a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x116d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1171: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1176: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x117a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x117f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1182: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1185: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1188: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x118b: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x118f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1194: mov_imm:
+	regs[5] = 0x551124ae, opcode= 0x0a
+0x119a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x119d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x11a1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x11a6: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x11ac: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x11b2: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x11b6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x11bb: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x11be: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x11c1: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x11c5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x11ca: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x11cd: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x11d0: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x11d3: mov_imm:
+	regs[5] = 0x657a5065, opcode= 0x0a
+0x11d9: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x11dc: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x11e0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x11e5: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x11e9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x11ee: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x11f1: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x11f4: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x11f8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x11fd: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1200: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1203: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1206: mov_imm:
+	regs[5] = 0x23f7ca3d, opcode= 0x0a
+0x120c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1210: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1215: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1218: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x121e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1224: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1227: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x122a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x122d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1231: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1236: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1239: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x123c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x123f: mov_imm:
+	regs[5] = 0xa4b8c1aa, opcode= 0x0a
+0x1245: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1248: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x124c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1251: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1254: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1257: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x125b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1260: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1263: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1266: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1269: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x126c: mov_imm:
+	regs[5] = 0x76fd0412, opcode= 0x0a
+0x1272: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1275: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1278: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x127e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1284: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1288: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x128d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1290: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1293: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1297: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x129c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x129f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x12a2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x12a6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x12ab: mov_imm:
+	regs[5] = 0xec8d4708, opcode= 0x0a
+0x12b1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x12b4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x12b7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x12ba: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x12bd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x12c0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x12c3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x12c6: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x12c9: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x12cc: mov_imm:
+	regs[5] = 0xda8d0158, opcode= 0x0a
+0x12d3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x12d8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x12db: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x12de: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x12e4: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x12ea: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x12ee: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x12f3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x12f6: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x12f9: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x12fc: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x12ff: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1302: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1305: mov_imm:
+	regs[5] = 0xec8e1f9c, opcode= 0x0a
+0x130b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x130e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1311: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1314: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1317: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x131a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x131d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1320: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1323: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1326: mov_imm:
+	regs[5] = 0x3a0c4b20, opcode= 0x0a
+0x132d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1332: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1335: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1338: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x133e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1344: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1348: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x134d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1350: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1353: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1357: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x135c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x135f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1362: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1365: mov_imm:
+	regs[5] = 0xca865e1e, opcode= 0x0a
+0x136b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x136e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1371: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1375: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x137a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x137d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1381: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1386: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x138a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x138f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1392: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1395: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1398: mov_imm:
+	regs[5] = 0x9acf5a32, opcode= 0x0a
+0x139e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x13a2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x13a7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x13aa: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x13b1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x13b6: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x13bc: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x13c0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x13c5: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x13c8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x13cb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x13ce: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x13d2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x13d7: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x13db: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x13e0: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x13e3: mov_imm:
+	regs[5] = 0x3a174aa7, opcode= 0x0a
+0x13e9: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x13ec: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x13ef: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x13f3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x13f8: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x13fc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1401: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1404: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1407: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x140a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x140d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1410: mov_imm:
+	regs[5] = 0xc7165e5a, opcode= 0x0a
+0x1416: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1419: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x141c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1422: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1428: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x142b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x142e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1431: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1435: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x143a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x143d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1440: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1443: mov_imm:
+	regs[5] = 0xd4dd7c75, opcode= 0x0a
+0x1449: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x144d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1452: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1455: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1458: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x145b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x145f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1464: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1467: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x146a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x146e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1473: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1477: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x147c: mov_imm:
+	regs[5] = 0x694613e4, opcode= 0x0a
+0x1482: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1486: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x148b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x148e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1495: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x149a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x14a0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x14a3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x14a6: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x14a9: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x14ad: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x14b2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x14b6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x14bb: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x14be: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x14c1: mov_imm:
+	regs[5] = 0x76fe3830, opcode= 0x0a
+0x14c7: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x14ca: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x14cd: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x14d0: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x14d4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x14d9: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x14dc: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x14e0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x14e5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x14e8: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x14eb: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x14ee: mov_imm:
+	regs[5] = 0xdd6dcb72, opcode= 0x0a
+0x14f4: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x14f8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x14fd: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1500: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1506: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x150c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x150f: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1512: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1515: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1518: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x151c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1521: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1524: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1527: mov_imm:
+	regs[5] = 0x84e66140, opcode= 0x0a
+0x152e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1533: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1536: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1539: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x153c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1540: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1545: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1548: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x154b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x154f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1554: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1557: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x155a: mov_imm:
+	regs[5] = 0xeace51e1, opcode= 0x0a
+0x1560: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1563: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1566: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x156d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1572: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1578: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x157b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x157e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1581: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1584: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1587: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x158a: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x158d: mov_imm:
+	regs[5] = 0xb5cac409, opcode= 0x0a
+0x1593: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1596: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1599: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x159c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x159f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x15a2: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x15a5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x15a8: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x15ac: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x15b1: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x15b4: mov_imm:
+	regs[5] = 0xb1c65b51, opcode= 0x0a
+0x15ba: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x15bd: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x15c1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x15c6: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x15cc: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x15d2: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x15d5: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x15d8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x15db: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x15de: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x15e1: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x15e5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x15ea: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x15ee: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x15f3: mov_imm:
+	regs[5] = 0x2c26c746, opcode= 0x0a
+0x15f9: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x15fd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1602: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1605: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1608: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x160b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x160f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1614: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1618: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x161d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1621: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1626: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1629: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x162c: mov_imm:
+	regs[5] = 0x86d7844f, opcode= 0x0a
+0x1633: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1638: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x163b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x163e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1644: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x164a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x164d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1650: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1653: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1657: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x165c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1660: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1665: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1668: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x166b: mov_imm:
+	regs[5] = 0xef91bc8a, opcode= 0x0a
+0x1671: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1674: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1677: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x167b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1680: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1683: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1686: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1689: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x168c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x168f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1692: mov_imm:
+	regs[5] = 0xa60db6a2, opcode= 0x0a
+0x1699: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x169e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x16a1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x16a4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x16aa: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x16b1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x16b6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x16b9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x16bd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x16c2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x16c6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x16cb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x16ce: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x16d1: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x16d4: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x16d8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x16dd: mov_imm:
+	regs[5] = 0xdc9a62ea, opcode= 0x0a
+0x16e3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x16e6: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x16e9: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x16ec: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x16ef: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x16f2: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x16f5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x16f8: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x16fb: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x16fe: mov_imm:
+	regs[5] = 0xfea9fcfb, opcode= 0x0a
+0x1704: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1708: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x170d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1711: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1716: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x171c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1722: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1725: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1728: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x172c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1731: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1734: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1738: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x173d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1741: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1746: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1749: mov_imm:
+	regs[5] = 0xccc71eca, opcode= 0x0a
+0x1750: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1755: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1758: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x175b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x175e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1762: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1767: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x176a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x176d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1771: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1776: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1779: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x177c: mov_imm:
+	regs[5] = 0x1526a26d, opcode= 0x0a
+0x1782: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1785: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1789: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x178e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1794: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x179a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x179d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x17a0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x17a3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x17a7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x17ac: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x17af: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x17b2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x17b5: mov_imm:
+	regs[5] = 0x2be3fee3, opcode= 0x0a
+0x17bb: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x17be: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x17c2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x17c7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x17cb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x17d0: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x17d3: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x17d6: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x17da: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x17df: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x17e2: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x17e5: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x17e8: mov_imm:
+	regs[5] = 0x69d34ffb, opcode= 0x0a
+0x17ef: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x17f4: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x17f7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x17fb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1800: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1806: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x180c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x180f: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1813: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1818: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x181b: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x181e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1821: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1824: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1827: mov_imm:
+	regs[5] = 0xb66aa182, opcode= 0x0a
+0x182e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1833: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1836: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x183a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x183f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1842: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1845: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1849: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x184e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1851: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1854: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1858: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x185d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1860: mov_imm:
+	regs[5] = 0x64a9f151, opcode= 0x0a
+0x1866: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1869: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x186c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1872: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1878: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x187b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x187e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1882: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1887: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x188a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x188d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1890: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1894: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1899: mov_imm:
+	regs[5] = 0xbcc5fc, opcode= 0x0a
+0x189f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x18a2: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x18a5: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x18a8: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x18ab: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x18ae: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x18b1: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x18b4: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x18b8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x18bd: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x18c1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x18c6: mov_imm:
+	regs[5] = 0x6cd9544b, opcode= 0x0a
+0x18cc: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x18cf: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x18d2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x18d8: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x18df: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x18e4: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x18e7: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x18ea: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x18ed: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x18f0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x18f3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x18f7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x18fc: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x18ff: mov_imm:
+	regs[5] = 0x644c58e, opcode= 0x0a
+0x1905: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1909: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x190e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1911: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1914: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1917: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x191a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x191d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1920: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1923: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1926: mov_imm:
+	regs[5] = 0xa8dfa858, opcode= 0x0a
+0x192c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x192f: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1932: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1938: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x193f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1944: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1948: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x194d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1950: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1954: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1959: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x195d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1962: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1966: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x196b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x196e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1971: mov_imm:
+	regs[5] = 0xab40722f, opcode= 0x0a
+0x1977: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x197a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x197d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1980: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1984: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1989: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x198d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1992: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1996: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x199b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x199e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x19a2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x19a7: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x19aa: mov_imm:
+	regs[5] = 0xfee300a3, opcode= 0x0a
+0x19b1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x19b6: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x19ba: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x19bf: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x19c2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x19c8: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x19cf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x19d4: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x19d7: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x19da: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x19dd: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x19e0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x19e3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x19e6: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x19e9: mov_imm:
+	regs[5] = 0x6ff17a9b, opcode= 0x0a
+0x19ef: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x19f3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x19f8: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x19fb: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x19fe: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1a01: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1a05: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a0a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1a0d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1a10: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1a13: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1a17: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a1c: mov_imm:
+	regs[5] = 0x9b451a1b, opcode= 0x0a
+0x1a22: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1a25: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1a28: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1a2e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1a34: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1a37: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1a3a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1a3d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1a41: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a46: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1a49: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1a4d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a52: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1a55: mov_imm:
+	regs[5] = 0x23239cfe, opcode= 0x0a
+0x1a5b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1a5e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1a61: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1a64: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1a68: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a6d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1a70: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1a73: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1a77: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a7c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1a80: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a85: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1a88: mov_imm:
+	regs[5] = 0x58586f7a, opcode= 0x0a
+0x1a8e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1a91: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1a95: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1a9a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1aa0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1aa6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1aa9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1aad: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1ab2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1ab5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1ab8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1abb: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1abe: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1ac1: mov_imm:
+	regs[5] = 0x4d6d5789, opcode= 0x0a
+0x1ac7: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1aca: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1acd: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1ad0: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1ad3: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1ad7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1adc: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1adf: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1ae2: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1ae5: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1ae8: mov_imm:
+	regs[5] = 0x6948e6cd, opcode= 0x0a
+0x1aee: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1af1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1af5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1afa: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1b00: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1b06: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1b09: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1b0d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b12: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1b15: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1b19: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b1e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1b21: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1b25: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b2a: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1b2d: mov_imm:
+	regs[5] = 0xbda4ac1a, opcode= 0x0a
+0x1b34: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b39: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1b3c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1b3f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1b43: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b48: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1b4c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b51: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1b55: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b5a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1b5e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b63: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1b66: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1b69: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1b6c: mov_imm:
+	regs[5] = 0x6e3830c6, opcode= 0x0a
+0x1b72: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1b76: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b7b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1b7e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1b84: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1b8b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b90: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1b93: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1b97: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1b9c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1b9f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1ba2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1ba6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1bab: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1baf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1bb4: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1bb7: mov_imm:
+	regs[5] = 0x6d74e95d, opcode= 0x0a
+0x1bbd: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1bc0: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1bc3: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1bc6: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1bca: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1bcf: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1bd3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1bd8: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1bdc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1be1: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1be4: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1be7: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1bea: mov_imm:
+	regs[5] = 0x82c5c498, opcode= 0x0a
+0x1bf0: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1bf4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1bf9: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1bfc: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1c02: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1c08: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1c0b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1c0e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1c11: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1c14: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1c17: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1c1a: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1c1e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c23: mov_imm:
+	regs[5] = 0xf34f433b, opcode= 0x0a
+0x1c29: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1c2d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c32: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1c36: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c3b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1c3e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1c41: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1c45: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c4a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1c4d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1c50: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1c54: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c59: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1c5c: mov_imm:
+	regs[5] = 0xa5ee3645, opcode= 0x0a
+0x1c62: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1c65: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1c68: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1c6e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1c75: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c7a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1c7d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1c80: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1c84: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1c89: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1c8c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1c8f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1c92: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1c95: mov_imm:
+	regs[5] = 0xea447469, opcode= 0x0a
+0x1c9b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1c9e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1ca1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1ca4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1ca7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1caa: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1cad: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1cb0: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1cb3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1cb7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1cbc: mov_imm:
+	regs[5] = 0xc3ff397a, opcode= 0x0a
+0x1cc2: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1cc5: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1cc9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1cce: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1cd4: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1cda: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1cdd: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1ce0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1ce3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1ce6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1cea: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1cef: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1cf2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1cf5: mov_imm:
+	regs[5] = 0xe0e49b3d, opcode= 0x0a
+0x1cfb: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1cff: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d04: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1d07: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1d0a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1d0e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d13: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1d16: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1d19: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1d1c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1d1f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1d23: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d28: mov_imm:
+	regs[5] = 0xc6d12b0d, opcode= 0x0a
+0x1d2e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1d32: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d37: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1d3a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1d40: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1d46: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1d49: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1d4c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1d50: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d55: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1d58: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1d5b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1d5f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d64: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1d67: mov_imm:
+	regs[5] = 0x944977eb, opcode= 0x0a
+0x1d6e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d73: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1d76: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1d7a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d7f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1d82: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1d85: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1d88: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1d8b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1d8e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1d92: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1d97: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1d9a: mov_imm:
+	regs[5] = 0x7b09544a, opcode= 0x0a
+0x1da1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1da6: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1daa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1daf: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1db3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1db8: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1dbf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1dc4: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1dca: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1dcd: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1dd0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1dd3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1dd6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1dda: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1ddf: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1de3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1de8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1deb: mov_imm:
+	regs[5] = 0x3b7c8d7e, opcode= 0x0a
+0x1df1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1df5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1dfa: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1dfd: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1e00: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1e03: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1e07: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e0c: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1e0f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1e13: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e18: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1e1b: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1e1e: mov_imm:
+	regs[5] = 0x67d3ee92, opcode= 0x0a
+0x1e24: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1e27: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1e2a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1e30: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1e36: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1e39: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1e3d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e42: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1e46: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e4b: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1e4e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1e51: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1e54: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1e57: mov_imm:
+	regs[5] = 0x5a2a1707, opcode= 0x0a
+0x1e5d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1e61: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e66: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1e69: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1e6c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1e6f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1e73: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e78: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1e7b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1e7e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1e81: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1e85: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e8a: mov_imm:
+	regs[5] = 0x7e60598d, opcode= 0x0a
+0x1e91: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e96: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1e9a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1e9f: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1ea2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1ea8: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1eae: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1eb2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1eb7: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1eba: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1ebd: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1ec0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1ec3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1ec6: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1ec9: mov_imm:
+	regs[5] = 0x1268881a, opcode= 0x0a
+0x1ed0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1ed5: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1ed8: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1edb: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1edf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1ee4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1ee7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1eea: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1eed: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1ef0: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1ef3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1ef6: mov_imm:
+	regs[5] = 0x7c0c4e30, opcode= 0x0a
+0x1efc: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1eff: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1f02: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1f08: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1f0e: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1f12: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f17: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1f1a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1f1d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1f20: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1f24: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f29: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1f2c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1f2f: mov_imm:
+	regs[5] = 0x21e02cae, opcode= 0x0a
+0x1f36: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f3b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1f3e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1f41: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1f44: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1f47: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1f4a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1f4d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1f50: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1f54: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f59: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1f5d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f62: mov_imm:
+	regs[5] = 0x8d0d07e1, opcode= 0x0a
+0x1f69: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f6e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1f71: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1f74: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1f7b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f80: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1f86: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1f89: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1f8c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1f8f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1f93: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1f98: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1f9b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1f9e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x1fa1: mov_imm:
+	regs[5] = 0x34535602, opcode= 0x0a
+0x1fa7: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1faa: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x1fad: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x1fb0: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x1fb3: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1fb6: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1fb9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1fbc: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1fbf: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x1fc2: mov_imm:
+	regs[5] = 0x1bb14213, opcode= 0x0a
+0x1fc9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1fce: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x1fd2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1fd7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x1fda: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x1fe0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x1fe6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x1fe9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x1fec: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x1ff0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x1ff5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x1ff8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x1ffb: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x1fff: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2004: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2007: mov_imm:
+	regs[5] = 0x8c4a0fa0, opcode= 0x0a
+0x200e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2013: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2016: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2019: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x201c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2020: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2025: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2029: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x202e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2031: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2035: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x203a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x203d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2040: mov_imm:
+	regs[5] = 0xba52f9e2, opcode= 0x0a
+0x2046: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x204a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x204f: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2052: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2059: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x205e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2064: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2067: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x206b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2070: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2073: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2076: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2079: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x207d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2082: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2085: mov_imm:
+	regs[5] = 0x45a21072, opcode= 0x0a
+0x208c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2091: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2094: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2097: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x209a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x209e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x20a3: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x20a6: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x20a9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x20ac: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x20af: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x20b2: mov_imm:
+	regs[5] = 0x2050530a, opcode= 0x0a
+0x20b9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x20be: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x20c1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x20c4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x20ca: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x20d0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x20d3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x20d6: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x20da: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x20df: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x20e2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x20e5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x20e8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x20eb: mov_imm:
+	regs[5] = 0xeb13da58, opcode= 0x0a
+0x20f1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x20f4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x20f8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x20fd: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2100: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2103: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2107: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x210c: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2110: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2115: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2118: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x211b: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x211f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2124: mov_imm:
+	regs[5] = 0xb3377218, opcode= 0x0a
+0x212a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x212d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2130: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2136: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x213c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x213f: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2142: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2145: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2148: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x214b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x214f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2154: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2157: mov_imm:
+	regs[5] = 0xc413c574, opcode= 0x0a
+0x215d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2160: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2163: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2167: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x216c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x216f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2173: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2178: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x217b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x217e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2181: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2184: mov_imm:
+	regs[5] = 0x3f99cfb1, opcode= 0x0a
+0x218b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2190: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2193: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2197: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x219c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x21a2: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x21a9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x21ae: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x21b1: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x21b5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x21ba: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x21bd: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x21c0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x21c3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x21c7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x21cc: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x21cf: mov_imm:
+	regs[5] = 0xac0aec46, opcode= 0x0a
+0x21d6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x21db: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x21df: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x21e4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x21e7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x21ea: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x21ed: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x21f1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x21f6: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x21f9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x21fc: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x21ff: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2202: mov_imm:
+	regs[5] = 0x18841562, opcode= 0x0a
+0x2208: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x220c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2211: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2214: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x221a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2221: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2226: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2229: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x222c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2230: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2235: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2238: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x223b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x223f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2244: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2247: mov_imm:
+	regs[5] = 0xf5a0a43a, opcode= 0x0a
+0x224d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2250: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2253: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2257: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x225c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2260: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2265: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2268: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x226b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x226e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2271: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2274: mov_imm:
+	regs[5] = 0xf36197b3, opcode= 0x0a
+0x227a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x227e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2283: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2286: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x228d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2292: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2298: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x229b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x229f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x22a4: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x22a7: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x22aa: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x22ae: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x22b3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x22b6: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x22b9: mov_imm:
+	regs[5] = 0xdfef3919, opcode= 0x0a
+0x22bf: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x22c3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x22c8: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x22cc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x22d1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x22d4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x22d7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x22da: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x22de: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x22e3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x22e7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x22ec: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x22ef: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x22f2: mov_imm:
+	regs[5] = 0x16ea23fa, opcode= 0x0a
+0x22f8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x22fb: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x22fe: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2304: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x230b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2310: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2313: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2316: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2319: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x231d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2322: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2326: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x232b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x232e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2331: mov_imm:
+	regs[5] = 0x2e2d897, opcode= 0x0a
+0x2338: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x233d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2340: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2343: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2346: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2349: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x234c: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2350: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2355: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2359: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x235e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2361: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2364: mov_imm:
+	regs[5] = 0x1000b14e, opcode= 0x0a
+0x236a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x236e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2373: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2376: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x237c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2383: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2388: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x238c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2391: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2394: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2398: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x239d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x23a0: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x23a3: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x23a7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x23ac: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x23af: mov_imm:
+	regs[5] = 0x5deb2eda, opcode= 0x0a
+0x23b5: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x23b8: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x23bb: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x23be: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x23c1: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x23c4: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x23c7: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x23ca: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x23cd: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x23d0: mov_imm:
+	regs[5] = 0xec217395, opcode= 0x0a
+0x23d6: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x23d9: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x23dc: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x23e3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x23e8: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x23ee: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x23f1: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x23f4: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x23f7: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x23fb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2400: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2403: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2406: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2409: mov_imm:
+	regs[5] = 0xdd9415de, opcode= 0x0a
+0x240f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2412: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2415: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2418: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x241b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x241f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2424: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2427: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x242a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x242d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2431: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2436: mov_imm:
+	regs[5] = 0xa44a7bf4, opcode= 0x0a
+0x243c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2440: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2445: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2449: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x244e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2454: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x245b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2460: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2463: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2467: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x246c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x246f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2472: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2476: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x247b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x247e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2481: mov_imm:
+	regs[5] = 0xc5a6d5ed, opcode= 0x0a
+0x2487: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x248a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x248d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2490: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2494: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2499: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x249d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x24a2: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x24a5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x24a9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x24ae: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x24b1: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x24b5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x24ba: mov_imm:
+	regs[5] = 0xf85d449c, opcode= 0x0a
+0x24c1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x24c6: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x24c9: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x24cd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x24d2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x24d8: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x24de: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x24e1: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x24e4: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x24e7: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x24ea: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x24ed: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x24f0: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x24f4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x24f9: mov_imm:
+	regs[5] = 0xbdf1e0b6, opcode= 0x0a
+0x24ff: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2502: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2506: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x250b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x250e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2511: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2514: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2517: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x251a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x251d: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2521: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2526: mov_imm:
+	regs[5] = 0x2e8aa47b, opcode= 0x0a
+0x252c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2530: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2535: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2539: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x253e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2544: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x254a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x254d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2550: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2553: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2557: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x255c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x255f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2562: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2565: mov_imm:
+	regs[5] = 0xc21f2c8, opcode= 0x0a
+0x256c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2571: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2575: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x257a: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x257e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2583: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2587: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x258c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x258f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2592: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2595: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2598: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x259b: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x259e: mov_imm:
+	regs[5] = 0x290e649c, opcode= 0x0a
+0x25a5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x25aa: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x25ad: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x25b0: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x25b6: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x25bc: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x25bf: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x25c3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x25c8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x25cb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x25cf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x25d4: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x25d8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x25dd: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x25e0: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x25e3: mov_imm:
+	regs[5] = 0x3750a594, opcode= 0x0a
+0x25e9: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x25ec: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x25ef: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x25f2: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x25f5: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x25f8: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x25fc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2601: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2604: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2607: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x260a: mov_imm:
+	regs[5] = 0x892ee56a, opcode= 0x0a
+0x2610: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2613: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2616: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x261c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2622: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2625: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2629: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x262e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2631: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2635: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x263a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x263d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2640: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2643: mov_imm:
+	regs[5] = 0x84d37cd, opcode= 0x0a
+0x2649: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x264c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2650: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2655: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2659: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x265e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2662: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2667: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x266b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2670: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2673: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2676: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2679: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x267c: mov_imm:
+	regs[5] = 0xf26521e4, opcode= 0x0a
+0x2683: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2688: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x268b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x268f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2694: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x269b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x26a0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x26a6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x26aa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x26af: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x26b2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x26b5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x26b9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x26be: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x26c1: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x26c4: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x26c7: mov_imm:
+	regs[5] = 0x82ef53f9, opcode= 0x0a
+0x26ce: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x26d3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x26d7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x26dc: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x26df: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x26e2: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x26e5: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x26e8: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x26eb: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x26ef: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x26f4: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x26f7: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x26fb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2700: mov_imm:
+	regs[5] = 0xdea18459, opcode= 0x0a
+0x2706: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2709: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x270c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2712: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2718: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x271b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x271f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2724: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2728: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x272d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2730: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2733: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2736: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2739: mov_imm:
+	regs[5] = 0x6782a8dd, opcode= 0x0a
+0x2740: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2745: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2748: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x274b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x274e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2751: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2755: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x275a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x275d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2760: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2763: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2766: mov_imm:
+	regs[5] = 0xac88d16e, opcode= 0x0a
+0x276c: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2770: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2775: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2778: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x277e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2784: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2787: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x278a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x278d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2790: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2794: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2799: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x279c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x27a0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x27a5: mov_imm:
+	regs[5] = 0xabf7edad, opcode= 0x0a
+0x27ab: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x27ae: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x27b1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x27b4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x27b7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x27ba: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x27bd: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x27c0: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x27c3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x27c7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x27cc: mov_imm:
+	regs[5] = 0xed2bcd45, opcode= 0x0a
+0x27d2: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x27d5: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x27d8: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x27de: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x27e4: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x27e7: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x27eb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x27f0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x27f3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x27f6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x27fa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x27ff: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2802: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2805: mov_imm:
+	regs[5] = 0x941195bb, opcode= 0x0a
+0x280b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x280e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2811: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2814: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2817: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x281a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x281d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2821: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2826: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2829: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x282c: mov_imm:
+	regs[5] = 0x90c48700, opcode= 0x0a
+0x2832: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2836: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x283b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x283e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2844: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x284a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x284d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2850: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2853: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2856: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2859: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x285c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x285f: mov_imm:
+	regs[5] = 0xa23dd066, opcode= 0x0a
+0x2865: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2868: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x286b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x286e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2871: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2874: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2877: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x287b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2880: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2883: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2886: mov_imm:
+	regs[5] = 0x1c0c5a3, opcode= 0x0a
+0x288d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2892: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2896: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x289b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x289f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28a4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x28ab: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28b0: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x28b6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x28ba: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28bf: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x28c2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x28c5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x28c8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x28cb: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x28cf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28d4: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x28d7: mov_imm:
+	regs[5] = 0xc52a7bf1, opcode= 0x0a
+0x28de: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28e3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x28e6: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x28ea: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28ef: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x28f2: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x28f6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x28fb: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x28fe: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2901: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2904: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2907: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x290a: mov_imm:
+	regs[5] = 0x1fd15303, opcode= 0x0a
+0x2911: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2916: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2919: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x291c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2922: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2928: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x292c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2931: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2934: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2938: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x293d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2940: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2943: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2946: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2949: mov_imm:
+	regs[5] = 0x6e3ae626, opcode= 0x0a
+0x294f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2952: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2955: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2958: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x295b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x295e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2961: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2964: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2967: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x296b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2970: mov_imm:
+	regs[5] = 0x5b0b042c, opcode= 0x0a
+0x2976: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2979: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x297c: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2983: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2988: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x298f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2994: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2997: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x299b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x29a0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x29a3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x29a6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x29aa: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x29af: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x29b2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x29b6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x29bb: mov_imm:
+	regs[5] = 0xfbc8a371, opcode= 0x0a
+0x29c1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x29c4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x29c7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x29ca: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x29ce: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x29d3: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x29d6: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x29d9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x29dd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x29e2: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x29e5: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x29e8: mov_imm:
+	regs[5] = 0x2e9cc2a, opcode= 0x0a
+0x29ee: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x29f1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x29f5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x29fa: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2a01: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a06: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2a0c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2a10: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a15: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2a19: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a1e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2a21: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2a25: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a2a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2a2e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a33: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2a36: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2a3a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a3f: mov_imm:
+	regs[5] = 0xa2d6a66, opcode= 0x0a
+0x2a45: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2a48: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2a4c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a51: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2a54: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2a57: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2a5a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2a5d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2a60: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2a63: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2a66: mov_imm:
+	regs[5] = 0x2afa0cfe, opcode= 0x0a
+0x2a6d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a72: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2a75: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2a78: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2a7f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a84: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2a8b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a90: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2a93: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2a97: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2a9c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2a9f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2aa3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2aa8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2aab: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2aae: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2ab1: mov_imm:
+	regs[5] = 0xbc411cf2, opcode= 0x0a
+0x2ab7: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2aba: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2abd: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2ac0: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2ac3: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2ac7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2acc: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2acf: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2ad2: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2ad5: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2ad8: mov_imm:
+	regs[5] = 0xb8fe02bb, opcode= 0x0a
+0x2ade: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2ae1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2ae4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2aea: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2af0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2af4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2af9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2afc: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2b00: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b05: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2b09: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b0e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2b12: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b17: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2b1b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b20: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2b23: mov_imm:
+	regs[5] = 0x1205afbf, opcode= 0x0a
+0x2b29: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2b2c: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2b2f: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2b32: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2b35: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2b39: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b3e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2b41: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2b44: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2b47: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2b4a: mov_imm:
+	regs[5] = 0xa1da38fc, opcode= 0x0a
+0x2b50: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2b53: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2b56: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2b5c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2b63: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b68: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2b6b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2b6f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b74: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2b77: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2b7a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2b7d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2b80: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2b84: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b89: mov_imm:
+	regs[5] = 0x627a8b33, opcode= 0x0a
+0x2b90: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2b95: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2b98: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2b9b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2b9f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2ba4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2ba7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2baa: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2bad: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2bb0: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2bb3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2bb7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2bbc: mov_imm:
+	regs[5] = 0x1a79ee99, opcode= 0x0a
+0x2bc2: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2bc5: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2bc9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2bce: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2bd4: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2bdb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2be0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2be4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2be9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2bec: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2bef: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2bf2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2bf5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2bf8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2bfb: mov_imm:
+	regs[5] = 0x58ab9c8f, opcode= 0x0a
+0x2c01: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2c04: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2c08: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c0d: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2c10: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2c13: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2c17: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c1c: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2c1f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2c22: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2c25: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2c29: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c2e: mov_imm:
+	regs[5] = 0xbd54b112, opcode= 0x0a
+0x2c35: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c3a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2c3d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2c41: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c46: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2c4d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c52: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2c59: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c5e: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2c61: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2c64: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2c67: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2c6a: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2c6e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c73: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2c76: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2c79: mov_imm:
+	regs[5] = 0x48acfd68, opcode= 0x0a
+0x2c7f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2c83: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2c88: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2c8b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2c8e: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2c91: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2c94: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2c97: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2c9b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2ca0: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2ca3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2ca6: mov_imm:
+	regs[5] = 0x853e8870, opcode= 0x0a
+0x2cad: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2cb2: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2cb5: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2cb8: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2cbe: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2cc4: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2cc7: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2cca: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2ccd: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2cd1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2cd6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2cd9: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2cdd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2ce2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2ce5: mov_imm:
+	regs[5] = 0xff429096, opcode= 0x0a
+0x2cec: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2cf1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2cf4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2cf7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2cfa: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2cfd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2d01: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2d06: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2d09: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2d0d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2d12: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2d15: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2d19: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2d1e: mov_imm:
+	regs[5] = 0x957a40e1, opcode= 0x0a
+0x2d24: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2d28: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2d2d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2d31: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2d36: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2d3c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2d42: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2d45: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2d48: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2d4b: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2d4e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2d51: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2d54: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2d57: mov_imm:
+	regs[5] = 0x99b987f0, opcode= 0x0a
+0x2d5d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2d60: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2d63: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2d66: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2d69: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2d6c: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2d6f: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2d72: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2d75: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2d79: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2d7e: mov_imm:
+	regs[5] = 0x8d72d98e, opcode= 0x0a
+0x2d84: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2d87: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2d8a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2d90: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2d96: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2d99: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2d9d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2da2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2da5: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2da8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2dab: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2dae: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2db2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2db7: mov_imm:
+	regs[5] = 0xd4cdb2b4, opcode= 0x0a
+0x2dbe: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2dc3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2dc6: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2dca: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2dcf: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2dd2: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2dd5: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2dd8: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2ddb: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2ddf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2de4: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2de7: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2dea: mov_imm:
+	regs[5] = 0xe952f31f, opcode= 0x0a
+0x2df1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2df6: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2df9: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2dfd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e02: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2e09: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e0e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2e14: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2e18: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e1d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2e20: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2e23: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2e26: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2e29: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2e2c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2e2f: mov_imm:
+	regs[5] = 0x317c8c72, opcode= 0x0a
+0x2e35: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2e38: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2e3c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e41: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2e45: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e4a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2e4e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e53: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2e56: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2e59: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2e5d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e62: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2e65: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2e68: mov_imm:
+	regs[5] = 0x3659f303, opcode= 0x0a
+0x2e6e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2e71: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2e75: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e7a: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2e80: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2e86: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2e89: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2e8d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e92: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2e96: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2e9b: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2e9e: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2ea2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2ea7: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2eaa: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2ead: mov_imm:
+	regs[5] = 0x37dac72, opcode= 0x0a
+0x2eb3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2eb6: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2eb9: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2ebc: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2ebf: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2ec2: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2ec5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2ec8: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2ecb: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2ece: mov_imm:
+	regs[5] = 0x1099c50c, opcode= 0x0a
+0x2ed4: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2ed7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2edb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2ee0: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2ee6: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2eec: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2eef: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2ef2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2ef6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2efb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2efe: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2f01: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2f04: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2f07: mov_imm:
+	regs[5] = 0xf96ee615, opcode= 0x0a
+0x2f0d: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2f11: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f16: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2f19: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2f1c: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2f1f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2f22: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2f26: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f2b: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2f2e: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2f31: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2f34: mov_imm:
+	regs[5] = 0x82c6a6d8, opcode= 0x0a
+0x2f3a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2f3d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2f41: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f46: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2f4c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2f52: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2f56: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f5b: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2f5e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2f61: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2f64: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2f67: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2f6b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f70: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2f73: mov_imm:
+	regs[5] = 0x598230b7, opcode= 0x0a
+0x2f7a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f7f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2f82: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2f85: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2f88: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2f8c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2f91: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2f94: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2f97: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2f9a: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2f9e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2fa3: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x2fa6: mov_imm:
+	regs[5] = 0x380d1209, opcode= 0x0a
+0x2fac: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2faf: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x2fb2: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x2fb9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2fbe: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x2fc5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2fca: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x2fce: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x2fd3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x2fd6: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2fd9: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x2fdc: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x2fdf: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x2fe2: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x2fe5: mov_imm:
+	regs[5] = 0xf8bb351f, opcode= 0x0a
+0x2feb: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x2fee: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x2ff1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x2ff4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x2ff7: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x2ffb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3000: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3004: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3009: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x300c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x300f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3012: mov_imm:
+	regs[5] = 0xca142c31, opcode= 0x0a
+0x3019: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x301e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3021: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x3024: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x302a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3030: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3033: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3037: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x303c: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x303f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3042: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3045: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3048: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x304b: mov_imm:
+	regs[5] = 0xf130e8fa, opcode= 0x0a
+0x3051: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3054: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3057: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x305a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x305d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3060: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3064: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3069: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x306c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x306f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3073: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3078: mov_imm:
+	regs[5] = 0x7b1f1257, opcode= 0x0a
+0x307e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3081: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x3084: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x308a: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3090: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3093: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3096: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x309a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x309f: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x30a3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x30a8: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x30ac: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x30b1: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x30b5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x30ba: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x30bd: mov_imm:
+	regs[5] = 0x14c67511, opcode= 0x0a
+0x30c3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x30c6: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x30c9: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x30cc: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x30cf: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x30d2: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x30d5: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x30d9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x30de: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x30e1: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x30e4: mov_imm:
+	regs[5] = 0x8e66a936, opcode= 0x0a
+0x30eb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x30f0: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x30f4: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x30f9: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x30fd: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3102: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x3108: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x310f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3114: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3117: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x311a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x311d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3120: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3123: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3127: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x312c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x312f: mov_imm:
+	regs[5] = 0x72fa242a, opcode= 0x0a
+0x3135: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3138: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x313c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3141: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x3145: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x314a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x314d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3150: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3153: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3157: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x315c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x315f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3162: mov_imm:
+	regs[5] = 0x50c065d3, opcode= 0x0a
+0x3168: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x316b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x316f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3174: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x317b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3180: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3187: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x318c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x318f: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3192: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3195: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3198: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x319b: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x319e: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x31a2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31a7: mov_imm:
+	regs[5] = 0x7e88cb9f, opcode= 0x0a
+0x31ae: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31b3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x31b7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31bc: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x31bf: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x31c3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31c8: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x31cc: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31d1: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x31d5: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31da: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x31de: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x31e3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x31e6: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x31e9: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x31ec: mov_imm:
+	regs[5] = 0xaee54d34, opcode= 0x0a
+0x31f2: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x31f5: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x31f8: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x31fe: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3204: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3207: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x320a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x320d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3211: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3216: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3219: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x321c: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x321f: mov_imm:
+	regs[5] = 0x6b679be8, opcode= 0x0a
+0x3225: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3228: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x322b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x322f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3234: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x3237: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x323a: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x323d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3241: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3246: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3249: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x324c: mov_imm:
+	regs[5] = 0x21e5dbc4, opcode= 0x0a
+0x3252: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3255: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x3258: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x325e: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3264: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3267: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x326a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x326d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3271: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3276: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x327a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x327f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3282: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3285: mov_imm:
+	regs[5] = 0xac26f705, opcode= 0x0a
+0x328b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x328e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3291: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x3294: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x3298: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x329d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x32a0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x32a3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x32a7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x32ac: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x32af: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x32b3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x32b8: mov_imm:
+	regs[5] = 0x898b08c9, opcode= 0x0a
+0x32be: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x32c1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x32c4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x32ca: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x32d1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x32d6: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x32d9: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x32dc: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x32df: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x32e2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x32e5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x32e8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x32eb: mov_imm:
+	regs[5] = 0x6ffa23b2, opcode= 0x0a
+0x32f1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x32f4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x32f8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x32fd: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x3301: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3306: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x330a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x330f: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3312: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3315: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3318: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x331c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3321: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3324: mov_imm:
+	regs[5] = 0x147488b3, opcode= 0x0a
+0x332a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x332d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x3330: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x3337: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x333c: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3342: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3345: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3349: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x334e: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3351: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3354: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3358: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x335d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3360: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3363: mov_imm:
+	regs[5] = 0xadd314cb, opcode= 0x0a
+0x336a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x336f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3373: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3378: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x337b: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x337f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3384: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x3387: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x338b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3390: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3393: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3396: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x339a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x339f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x33a3: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x33a8: mov_imm:
+	regs[5] = 0xc594518d, opcode= 0x0a
+0x33ae: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x33b2: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x33b7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x33bb: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x33c0: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x33c7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x33cc: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x33d2: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x33d5: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x33d8: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x33db: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x33de: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x33e1: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x33e4: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x33e7: mov_imm:
+	regs[5] = 0x83637fde, opcode= 0x0a
+0x33ee: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x33f3: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x33f6: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x33f9: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x33fc: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x33ff: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3402: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3405: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3408: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x340b: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x340f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3414: mov_imm:
+	regs[5] = 0x8cc1e7f7, opcode= 0x0a
+0x341a: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x341d: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x3420: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x3426: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x342c: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3430: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3435: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3438: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x343c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3441: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3444: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3448: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x344d: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3450: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3454: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3459: mov_imm:
+	regs[5] = 0xd630fab5, opcode= 0x0a
+0x345f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3462: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3465: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x3468: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x346b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x346f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3474: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3478: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x347d: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3480: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3484: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3489: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x348d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3492: mov_imm:
+	regs[5] = 0x5f61a9f2, opcode= 0x0a
+0x3499: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x349e: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x34a1: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x34a4: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x34aa: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x34b0: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x34b3: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x34b7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x34bc: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x34bf: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x34c2: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x34c5: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x34c8: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x34cb: mov_imm:
+	regs[5] = 0xf41da8b5, opcode= 0x0a
+0x34d1: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x34d4: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x34d7: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x34da: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x34dd: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x34e0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x34e3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x34e6: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x34e9: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x34ec: mov_imm:
+	regs[5] = 0x879bc54a, opcode= 0x0a
+0x34f2: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x34f5: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x34f9: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x34fe: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x3504: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x350a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x350d: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3510: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3513: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3516: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3519: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x351d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3522: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3525: mov_imm:
+	regs[5] = 0xf1d7250d, opcode= 0x0a
+0x352c: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3531: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3534: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3537: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x353b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3540: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x3543: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3546: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3549: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x354c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x354f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3552: mov_imm:
+	regs[5] = 0x955fe97c, opcode= 0x0a
+0x3558: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x355b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x355e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x3564: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x356b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3570: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3573: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3576: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3579: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x357c: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x357f: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3582: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3585: mov_imm:
+	regs[5] = 0xcce31cf0, opcode= 0x0a
+0x358b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x358f: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3594: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3597: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x359a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x359d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x35a0: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x35a3: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x35a7: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35ac: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x35b0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35b5: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x35b8: mov_imm:
+	regs[5] = 0xc341a10d, opcode= 0x0a
+0x35bf: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35c4: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x35c7: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x35ca: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x35d1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35d6: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x35dc: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x35df: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x35e2: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x35e6: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35eb: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x35ef: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35f4: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x35f8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x35fd: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3600: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3603: mov_imm:
+	regs[5] = 0x69ef910b, opcode= 0x0a
+0x360a: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x360f: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3612: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3615: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x3618: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x361b: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x361e: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3621: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3624: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3627: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x362a: mov_imm:
+	regs[5] = 0x1fc4526d, opcode= 0x0a
+0x3630: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3633: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x3636: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x363d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3642: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x3649: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x364e: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x3651: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3655: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x365a: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x365d: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3660: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3664: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3669: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x366d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3672: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x3675: mov_imm:
+	regs[5] = 0x54ad698a, opcode= 0x0a
+0x367b: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x367e: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3682: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3687: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x368a: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x368d: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3690: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3693: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3696: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3699: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x369d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x36a2: mov_imm:
+	regs[5] = 0x3eef2f57, opcode= 0x0a
+0x36a8: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x36ab: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x36ae: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x36b4: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x36ba: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x36bd: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x36c0: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x36c3: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x36c6: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x36c9: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x36cc: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x36d0: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x36d5: mov_imm:
+	regs[5] = 0xa1567e5, opcode= 0x0a
+0x36db: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x36de: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x36e1: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x36e4: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x36e8: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x36ed: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x36f1: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x36f6: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x36f9: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x36fc: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x36ff: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3702: mov_imm:
+	regs[5] = 0x210da432, opcode= 0x0a
+0x3708: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x370b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x370e: mov_imm:
+	regs[20] = 0x4, opcode= 0x0a
+0x3714: mov_imm:
+	regs[21] = 0x5, opcode= 0x0a
+0x371a: mov_regs:
+	regs[2] = regs[1], opcode= 0x05
+0x371e: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3723: mov_regs:
+	regs[3] = regs[1], opcode= 0x05
+0x3726: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3729: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x372d: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3732: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x3735: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x3738: add_regs:
+	regs[4] += regs[1], opcode= 0x02
+0x373b: mov_imm:
+	regs[5] = 0x60518528, opcode= 0x0a
+0x3741: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x3744: add_regs:
+	regs[0] += regs[4], opcode= 0x02
+0x3747: mov_regs:
+	regs[2] = regs[0], opcode= 0x05
+0x374b: jmp_imm:
+	pc += 0x1, opcode= 0x0b
+0x3750: mov_regs:
+	regs[3] = regs[0], opcode= 0x05
+0x3753: shl_regs:
+	regs[2] <<= regs[20], opcode= 0x06
+0x3756: shr_regs:
+	regs[3] >>= regs[21], opcode= 0x03
+0x3759: mov_regs:
+	regs[4] = regs[2], opcode= 0x05
+0x375c: xor_regs:
+	regs[4] ^= regs[3], opcode= 0x01
+0x375f: add_regs:
+	regs[4] += regs[0], opcode= 0x02
+0x3762: mov_imm:
+	regs[5] = 0x8a3dca16, opcode= 0x0a
+0x3768: xor_regs:
+	regs[4] ^= regs[5], opcode= 0x01
+0x376b: add_regs:
+	regs[1] += regs[4], opcode= 0x02
+0x376e: mov_imm:
+	regs[30] = 0x7a441c72, opcode= 0x0a
+0x3774: mov_imm:
+	regs[31] = 0xbdc012e9, opcode= 0x0a
+0x377a: xor_regs:
+	regs[0] ^= regs[30], opcode= 0x01
+0x377d: xor_regs:
+	regs[1] ^= regs[31], opcode= 0x01
+max register index:31
