@@ -3911,7 +3911,7 @@ _int_malloc (mstate av, size_t bytes)
                         malloc_printerr ("malloc(): largebin double linked list corrupted (bk)");
                     }
                 }
-              else
+              else      // largebin空，直接插入
                 victim->fd_nextsize = victim->bk_nextsize = victim;
             }
 
