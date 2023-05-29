@@ -3962,11 +3962,14 @@ _int_malloc (mstate av, size_t bytes)
           bin = bin_at (av, idx);
 
           /* skip scan if empty or largest chunk is too small */
-          if ((victim = first (bin)) != bin     // 从largebin中最大的块开始降序遍历，best-fit
-	      && (unsigned long) chunksize_nomask (victim)
+          if ((victim = first (bin)) != bin     // 当该largebin链表非空
+	      && (unsigned long) chunksize_nomask (victim)  // 且最大的chunk大小大于等于请求大小
 	        >= (unsigned long) (nb))
             {
-              victim = victim->bk_nextsize;
+              victim = victim->bk_nextsize; // victim = bin->fd->bk_nextsize
+                                            // 指向当前index下最小的chunk
+              
+              // 即从小->大的遍历找到首个满足请求大小的chunk
               while (((unsigned long) (size = chunksize (victim)) <
                       (unsigned long) (nb)))
                 victim = victim->bk_nextsize;
@@ -3976,7 +3979,8 @@ _int_malloc (mstate av, size_t bytes)
               if (victim != last (bin)
 		  && chunksize_nomask (victim)
 		    == chunksize_nomask (victim->fd))
-                victim = victim->fd;
+                victim = victim->fd;  // 如果满足要求，同样大小的chunk有多个，则
+                                      // 选择第二个，这样就不用维护bk_/fd_nextsize
 
               remainder_size = size - nb;
               unlink_chunk (av, victim);
