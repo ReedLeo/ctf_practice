@@ -3896,7 +3896,7 @@ _int_malloc (mstate av, size_t bytes)
                         /* Always insert in the second position.  */
                         fwd = fwd->fd;
                       else
-                        { // 后续chunk均比victim大
+                        { // 后续chunk均比victim小
                           victim->fd_nextsize = fwd;
                           victim->bk_nextsize = fwd->bk_nextsize;
                           // 2.29开始增加此处检测
