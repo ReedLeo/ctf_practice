@@ -3859,7 +3859,7 @@ _int_malloc (mstate av, size_t bytes)
                   assert (chunk_main_arena (bck->bk));
                   // 待插入chunk大小比当前large bin中最小的还小
                   if ((unsigned long) (size)
-		      < (unsigned long) chunksize_nomask (bck->bk))
+		      < (unsigned long) chunksize_nomask (bck->bk)) // here bck == bin_at(av, victim_index)
                     {
                       // 调整插入位置到队首，即当前插入的是最小chunk。
                       fwd = bck;        // fwd = bin
