@@ -3963,13 +3963,13 @@ _int_malloc (mstate av, size_t bytes)
 
           /* skip scan if empty or largest chunk is too small */
           if ((victim = first (bin)) != bin     // 当该largebin链表非空
-	      && (unsigned long) chunksize_nomask (victim)  // 且最大的chunk大小大于等于请求大小
+	      && (unsigned long) chunksize_nomask (victim)  // 且最大的chunk大小 >= 所需
 	        >= (unsigned long) (nb))
             {
               victim = victim->bk_nextsize; // victim = bin->fd->bk_nextsize
                                             // 指向当前index下最小的chunk
               
-              // 即从小->大的遍历找到首个满足请求大小的chunk
+              // 即从小->大的遍历找到首个大小 >= 请求的chunk
               while (((unsigned long) (size = chunksize (victim)) <
                       (unsigned long) (nb)))
                 victim = victim->bk_nextsize;
@@ -3982,11 +3982,14 @@ _int_malloc (mstate av, size_t bytes)
                 victim = victim->fd;  // 如果满足要求，同样大小的chunk有多个，则
                                       // 选择第二个，这样就不用维护bk_/fd_nextsize
 
+              // 首个满足需求的chunk.size >= nb, 因此尝试切分。
+              // 如果切分后剩余部分比最小chunk还小，则不切分；否则，切分成功。
+              // 切分剩余部分放入unsorted-bin.
               remainder_size = size - nb;
               unlink_chunk (av, victim);
 
               /* Exhaust */
-              if (remainder_size < MINSIZE)
+              if (remainder_size < MINSIZE)     // 剩余部分太小了,无法成为一个chunk,则不切分,整块取用。
                 {
                   set_inuse_bit_at_offset (victim, size);
                   if (av != &main_arena)
@@ -3994,7 +3997,7 @@ _int_malloc (mstate av, size_t bytes)
                 }
               /* Split */
               else
-                {
+                { // 剩余部分还能作为独立chunk。切剩部分插入unsorted-bin.
                   remainder = chunk_at_offset (victim, nb);
                   /* We cannot assume the unsorted list is empty and therefore
                      have to perform a complete insert here.  */
@@ -4007,7 +4010,7 @@ _int_malloc (mstate av, size_t bytes)
                   bck->fd = remainder;
                   fwd->bk = remainder;
                   if (!in_smallbin_range (remainder_size))
-                    {
+                    { // 剩余chunk大小属于large-bin范畴，清空*_nextsize指针。(因为放到unsorted-bin里, 不再需要它们)
                       remainder->fd_nextsize = NULL;
                       remainder->bk_nextsize = NULL;
                     }
