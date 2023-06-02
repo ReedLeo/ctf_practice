@@ -3881,7 +3881,7 @@ _int_malloc (mstate av, size_t bytes)
                   else
                     { // 插在large队列中间
                       assert (chunk_main_arena (fwd));
-                      // 按chunk大小降序查找待插入位置：即找到第队列中第一个>=victim的chunk。
+                      // 按chunk大小降序查找待插入位置：即找到队列中第一个大小<=victim的chunk。
                       while ((unsigned long) size < chunksize_nomask (fwd))
                         {
                           fwd = fwd->fd_nextsize;
