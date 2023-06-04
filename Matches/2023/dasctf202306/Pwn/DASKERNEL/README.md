@@ -1,0 +1,11 @@
+# DASCTF - DASKERNEL
+
+Here are some kernel config options that you may need
+
+```
+CONFIG_SLUB=y
+CONFIG_SLAB_FREELIST_RANDOM=y
+CONFIG_SLAB_FREELIST_HARDENED=y
+CONFIG_HARDENED_USERCOPY=y
+```
+
