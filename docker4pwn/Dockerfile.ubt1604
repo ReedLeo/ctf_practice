@@ -26,7 +26,8 @@ RUN dpkg --add-architecture i386 && \
     libffi-dev \
     libssl-dev \
     python3-dev \
-    tmux \
+    python3-pip \
+    # tmux \
     glibc-source \
     cmake \
     strace \
@@ -44,29 +45,29 @@ RUN dpkg --add-architecture i386 && \
     gawk \
     file \
     zsh \
-    qemu \
+    # qemu \
     gcc-multilib \
-    binwalk \
+    # binwalk \
     libseccomp-dev \
     libseccomp2 \
     seccomp	\
 	tzdata \
-	bison \
+	# bison \
 	autojump \
 	software-properties-common
 
 RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
-RUN apt-add-repository ppa:brightbox/ruby-ng && \
-	apt autoremove ruby && \
-    apt update &&\
-	apt install -y ruby2.4 &&\
-	apt install -y ruby2.4-dev
+# RUN apt-add-repository ppa:brightbox/ruby-ng && \
+# 	apt autoremove ruby && \
+#     apt update &&\
+# 	apt install -y ruby2.4 &&\
+# 	apt install -y ruby2.4-dev
 
-RUN ulimit -c 0
-RUN gem install one_gadget 
-RUN gem install seccomp-tools 
+# RUN ulimit -c 0
+# RUN gem install one_gadget 
+# RUN gem install seccomp-tools 
 
 #RUN wget https://bootstrap.pypa.io/pip/get-pip.py && \
 RUN wget https://bootstrap.pypa.io/pip/3.5/get-pip.py && \
@@ -92,17 +93,17 @@ RUN python3 -m pip install -U pip &&\
     ropper \
     unicorn \
     capstone \
-    zio \
+    # zio \
     smmap2 \
     z3-solver \
-    ropgadget \
-    pwntools==4.4.0
+    ropgadget
+    # pwntools==4.4.0
 
-RUN git clone https://github.com/niklasb/libc-database.git libc-database && \
-    cd libc-database && ./get || echo "/libc-database/" > ~/.libcdb_path && cd ..
+# RUN git clone https://github.com/niklasb/libc-database.git libc-database && \
+#     cd libc-database && ./get || echo "/libc-database/" > ~/.libcdb_path && cd ..
 
-RUN git clone https://github.com/pwndbg/pwndbg && \
-    cd pwndbg && ./setup.sh && cd ..
+# RUN git clone https://github.com/pwndbg/pwndbg && \
+#     cd pwndbg && ./setup.sh && cd ..
 
 WORKDIR /ctf/work/
 
