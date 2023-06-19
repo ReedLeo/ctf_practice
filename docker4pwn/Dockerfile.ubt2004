@@ -2,8 +2,8 @@ FROM ubuntu:20.04
 
 # RUN  sed -i s@/archive.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
 # RUN  sed -i s@/security.ubuntu.com/@/mirrors.tuna.tsinghua.edu.cn/@g /etc/apt/sources.list
-RUN sed -i s@/archive.ubuntu.com@/mirrors.ustc.edu.cn@g /etc/apt/sources.list
-RUN sed -i s@/security.ubuntu.com/@/mirrors.ustc.edu.cn@g /etc/apt/sources.list
+RUN sed -i s@/archive.ubuntu.com@/mirrors.ustc.edu.cn/@g /etc/apt/sources.list
+RUN sed -i s@/security.ubuntu.com/@/mirrors.ustc.edu.cn/@g /etc/apt/sources.list
 RUN apt-get clean
 RUN apt-get update
 
@@ -66,6 +66,7 @@ RUN dpkg --add-architecture i386 && \
 RUN ln -fs /usr/share/zoneinfo/$TZ /etc/localtime && \
     dpkg-reconfigure -f noninteractive tzdata
 
+RUN gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/ && gem sources --update
 RUN gem install one_gadget 
 RUN gem install seccomp-tools 
 
