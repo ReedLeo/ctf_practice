@@ -2376,7 +2376,7 @@ sysmalloc (INTERNAL_SIZE_T nb, mstate av)
      at least MINSIZE and to have prev_inuse set.
    */
 
-  assert ((old_top == initial_top (av) && old_size == 0) ||
+  assert ((old_top == initial_top (av) && old_size == 0) || // if the top is not yet initialized, its size == 0
           ((unsigned long) (old_size) >= MINSIZE &&
            prev_inuse (old_top) &&
            ((unsigned long) old_end & (pagesize - 1)) == 0));
@@ -4167,7 +4167,7 @@ _int_malloc (mstate av, size_t bytes)
       if (__glibc_unlikely (size > av->system_mem))
         malloc_printerr ("malloc(): corrupted top size");
 
-      if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))
+      if ((unsigned long) (size) >= (unsigned long) (nb + MINSIZE))     // the top is big enough, split it.
         {
           remainder_size = size - nb;
           remainder = chunk_at_offset (victim, nb);
@@ -4204,7 +4204,7 @@ _int_malloc (mstate av, size_t bytes)
             alloc_perturb (p, bytes);
           return p;
         }
-    }
+    }   // big for-loop end
 }
 
 /*
